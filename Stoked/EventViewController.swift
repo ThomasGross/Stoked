@@ -10,7 +10,7 @@ import UIKit
 
 class EventViewController: UIViewController {
 
-    @IBOutlet weak var SideMenuButton: UIBarButtonItem!aasd
+    @IBOutlet weak var SideMenuButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
