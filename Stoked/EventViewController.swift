@@ -37,15 +37,19 @@ class EventViewController: UIViewController {
         
         
         
-        Alamofire.request("http://stokedapi620161110014743.azurewebsites.net/api/api").validate().responseJSON { response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                print("JSON: \(json)")
-            case .failure(let error):
-                print(error)
-            }
-        }
+//        Alamofire.request("http://stokedapi620161110014743.azurewebsites.net/api/api").validate().responseJSON { response in
+//            switch response.result {
+//            case .success(let value):
+//                let json = JSON(value)
+//                
+//                
+//                print("first object: \(json[1]["LocationLat"].stringValue)")
+//                
+//                
+//            case .failure(let error):
+//                print(error)
+//            }
+//        }
         
         // Do any additional setup after loading the view.
     }
