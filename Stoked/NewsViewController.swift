@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class NewsViewController: UIViewController {
 
     @IBOutlet weak var SideMenuButton: UIBarButtonItem!

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class EventViewController: UIViewController {
 
@@ -20,6 +22,30 @@ class EventViewController: UIViewController {
         SideMenuButton.action = #selector(SWRevealViewController.revealToggle(_:))
         
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        
+        
+//        Alamofire.request("http://stokedapi620161110014743.azurewebsites.net/api/api").responseJSON { response in
+//            print(response.request)  // original URL request
+//            print(response.response) // HTTP URL response
+//            print(response.data)     // server data
+//            print(response.result)   // result of response serialization
+//            
+//            if let JSON = response.result.value {
+//                print("JSON: \(JSON)")
+//            }
+//        }
+        
+        
+        
+        Alamofire.request("http://stokedapi620161110014743.azurewebsites.net/api/api").validate().responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                print("JSON: \(json)")
+            case .failure(let error):
+                print(error)
+            }
+        }
         
         // Do any additional setup after loading the view.
     }

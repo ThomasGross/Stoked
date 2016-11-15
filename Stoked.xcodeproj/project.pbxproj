@@ -18,6 +18,7 @@
 		0D1237391DD53BA30036A89F /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1237381DD53BA30036A89F /* EventViewController.swift */; };
 		0D12373B1DD53ED90036A89F /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D12373A1DD53ED90036A89F /* NewsViewController.swift */; };
 		0D12373E1DD5C9060036A89F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D12373D1DD5C9060036A89F /* MapKit.framework */; };
+		138560E1F9EA87B62DE934DA /* Pods_Stoked.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2E23F3DEB60981741C15847 /* Pods_Stoked.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,9 @@
 		0D1237381DD53BA30036A89F /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		0D12373A1DD53ED90036A89F /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		0D12373D1DD5C9060036A89F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		24663D96828F2B531D953FFA /* Pods-Stoked.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stoked.release.xcconfig"; path = "Pods/Target Support Files/Pods-Stoked/Pods-Stoked.release.xcconfig"; sourceTree = "<group>"; };
+		56987066F372C920424954A2 /* Pods-Stoked.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stoked.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Stoked/Pods-Stoked.debug.xcconfig"; sourceTree = "<group>"; };
+		E2E23F3DEB60981741C15847 /* Pods_Stoked.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stoked.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +48,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D12373E1DD5C9060036A89F /* MapKit.framework in Frameworks */,
+				138560E1F9EA87B62DE934DA /* Pods_Stoked.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +61,7 @@
 				0D1237191DD517E30036A89F /* Stoked */,
 				0D1237181DD517E30036A89F /* Products */,
 				0D12373C1DD5C9060036A89F /* Frameworks */,
+				812B563A6B510D6885D53F8B /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,8 +105,18 @@
 			isa = PBXGroup;
 			children = (
 				0D12373D1DD5C9060036A89F /* MapKit.framework */,
+				E2E23F3DEB60981741C15847 /* Pods_Stoked.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		812B563A6B510D6885D53F8B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				56987066F372C920424954A2 /* Pods-Stoked.debug.xcconfig */,
+				24663D96828F2B531D953FFA /* Pods-Stoked.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -110,9 +126,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0D12372C1DD517E30036A89F /* Build configuration list for PBXNativeTarget "Stoked" */;
 			buildPhases = (
+				B2154DC1E56BE2D364B73809 /* [CP] Check Pods Manifest.lock */,
 				0D1237131DD517E30036A89F /* Sources */,
 				0D1237141DD517E30036A89F /* Frameworks */,
 				0D1237151DD517E30036A89F /* Resources */,
+				86310109BD1F083C107DA00B /* [CP] Embed Pods Frameworks */,
+				A4BF5948DC9DF9DE270760FD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -175,6 +194,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		86310109BD1F083C107DA00B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Stoked/Pods-Stoked-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A4BF5948DC9DF9DE270760FD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Stoked/Pods-Stoked-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B2154DC1E56BE2D364B73809 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0D1237131DD517E30036A89F /* Sources */ = {
@@ -306,6 +373,7 @@
 		};
 		0D12372D1DD517E30036A89F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 56987066F372C920424954A2 /* Pods-Stoked.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -321,6 +389,7 @@
 		};
 		0D12372E1DD517E30036A89F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24663D96828F2B531D953FFA /* Pods-Stoked.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
