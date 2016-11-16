@@ -27,9 +27,10 @@ class EventViewController: UIViewController {
         
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         
-        locations = jsonLocationService.getLocations()
         
 
+        
+        
         
         // Do any additional setup after loading the view.
     }

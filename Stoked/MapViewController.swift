@@ -9,6 +9,8 @@
 import UIKit
 import MapKit
 import CoreLocation
+import Alamofire
+import SwiftyJSON
 
 class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
@@ -16,13 +18,15 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     @IBOutlet weak var MapView: MKMapView!
     
-    // tells the whether or not to update userlocation
+    // Tells the whether or not to update userlocation
     var relocation : Bool = false
     
     // Delegate property for the locationmanager
     var locationManager = CLLocationManager()
     
-
+    var jsonLocationService = JsonLocationService()
+    
+    var locations: [LocationModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +36,15 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         SideMenuButton.action = #selector(SWRevealViewController.revealToggle(_:))
         
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        
+        DispatchQueue.main.async {
+            self.jsonLocationService.getLocations() { responceLocation in
+                self.locations = responceLocation
+                print(responceLocation[0].locationName)
+                // todo
+                // add annotation placer method here
+            }
+        }
         
         // sets the delegate to be self
         locationManager.delegate = self
@@ -73,7 +86,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         if let userLocation = locations.last{  // optional binding
             
             let region = MKCoordinateRegionMakeWithDistance(userLocation.coordinate,100000,100000)
-
+            
             self.MapView.setRegion(region, animated: true) //vis området på kortet
         }
         
