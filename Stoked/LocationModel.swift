@@ -61,6 +61,7 @@ class LocationModel {
         self.surfDifficulty = surfDifficulty
         self.supDifficulty = supDifficulty
         self.whiteWaterDifficulty = whiteWaterDifficulty
+        
     }
     
     

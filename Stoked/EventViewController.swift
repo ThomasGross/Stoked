@@ -13,6 +13,10 @@ import SwiftyJSON
 class EventViewController: UIViewController {
 
     @IBOutlet weak var SideMenuButton: UIBarButtonItem!
+
+    var jsonLocationService = JsonLocationService()
+    
+    var locations: [LocationModel]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,33 +27,9 @@ class EventViewController: UIViewController {
         
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         
+        locations = jsonLocationService.getLocations()
         
-//        Alamofire.request("http://stokedapi620161110014743.azurewebsites.net/api/api").responseJSON { response in
-//            print(response.request)  // original URL request
-//            print(response.response) // HTTP URL response
-//            print(response.data)     // server data
-//            print(response.result)   // result of response serialization
-//            
-//            if let JSON = response.result.value {
-//                print("JSON: \(JSON)")
-//            }
-//        }
-        
-        
-        
-//        Alamofire.request("http://stokedapi620161110014743.azurewebsites.net/api/api").validate().responseJSON { response in
-//            switch response.result {
-//            case .success(let value):
-//                let json = JSON(value)
-//                
-//                
-//                print("first object: \(json[1]["LocationLat"].stringValue)")
-//                
-//                
-//            case .failure(let error):
-//                print(error)
-//            }
-//        }
+
         
         // Do any additional setup after loading the view.
     }

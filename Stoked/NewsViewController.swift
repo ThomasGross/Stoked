@@ -13,6 +13,8 @@ class NewsViewController: UIViewController {
 
     @IBOutlet weak var SideMenuButton: UIBarButtonItem!
     
+    var jsonWeatherService = JsonWeatherService()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,6 +24,9 @@ class NewsViewController: UIViewController {
         
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         // Do any additional setup after loading the view.
+        
+        jsonWeatherService.getWeatherForLocation(id: 5)
+        
     }
 
     override func didReceiveMemoryWarning() {
