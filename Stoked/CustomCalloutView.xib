@@ -64,13 +64,6 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SRx-Q9-uhA">
-                    <rect key="frame" x="64" y="169" width="42" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2tN-KJ-DK6">
                     <rect key="frame" x="114" y="169" width="42" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -106,6 +99,13 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SRx-Q9-uhA">
+                    <rect key="frame" x="60" y="169" width="51" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <nil key="simulatedStatusBarMetrics"/>
@@ -115,6 +115,12 @@
                 <outlet property="locationCategories" destination="6qR-GQ-45F" id="Ki1-iw-13M"/>
                 <outlet property="locationCurrentConditions" destination="Fba-oD-epS" id="u9I-RV-Wzh"/>
                 <outlet property="locationName" destination="KNI-m4-bbu" id="mEH-EJ-PnH"/>
+                <outlet property="locationTempAir" destination="m7Z-a9-Wu0" id="UsI-GD-qC7"/>
+                <outlet property="locationTempWater" destination="X8h-pt-JQd" id="t0a-Nn-Gsg"/>
+                <outlet property="locationWaveDirection" destination="DN2-vQ-Q2b" id="Vrg-fG-RJn"/>
+                <outlet property="locationWaveHight" destination="ecr-mh-4pM" id="bwA-zS-2oe"/>
+                <outlet property="locationWindDirection" destination="2tN-KJ-DK6" id="o3X-Zb-GfO"/>
+                <outlet property="locationWindSpeed" destination="SRx-Q9-uhA" id="69x-8V-w9s"/>
             </connections>
             <point key="canvasLocation" x="573" y="267"/>
         </view>

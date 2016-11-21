@@ -16,7 +16,17 @@ class CustomCalloutView: UIView {
     
     @IBOutlet weak var locationCurrentConditions: UILabel!
     
+    @IBOutlet weak var locationTempAir: UILabel!
     
+    @IBOutlet weak var locationWindSpeed: UILabel!
+    
+    @IBOutlet weak var locationWindDirection: UILabel!
+    
+    @IBOutlet weak var locationWaveHight: UILabel!
+    
+    @IBOutlet weak var locationWaveDirection: UILabel!
+    
+    @IBOutlet weak var locationTempWater: UILabel!
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.

@@ -25,7 +25,6 @@ class NewsViewController: UIViewController {
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         // Do any additional setup after loading the view.
         
-        jsonWeatherService.getWeatherForLocation(id: 5)
         
     }
 

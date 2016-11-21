@@ -12,17 +12,17 @@ import SwiftyJSON
 
 class JsonWeatherService {
     
-    func getWeatherForLocation(id: Int) {
+    func getWeatherForLocation(id: Int , completion: @escaping (JSON) -> ()) {
         
         Alamofire.request("http://stokedwebapi.azurewebsites.net/api/weatherapi/\(id)").validate().responseJSON { response in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
-                    
-//                print("id: \(json)")
+                
+                completion(json)
                 
                 
-                print("id: \((json["data"]["weather"][0]["date"]))")
+                
                 
             case .failure(let error):
                 print(error)

@@ -26,6 +26,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     var jsonLocationService = JsonLocationService()
     
+    var jsonWeatherService = JsonWeatherService()
+    
     var locations: [LocationModel] = []
     
     override func viewDidLoad() {
@@ -191,6 +193,20 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                 }
                 
                 calloutView.locationCurrentConditions.text = location.locationDescription
+                
+                DispatchQueue.main.async {
+                    self.jsonWeatherService.getWeatherForLocation(id: location.locationId) { responceLocation in
+
+                        calloutView.locationCurrentConditions.text = "\((responceLocation["data"]["weather"][0]["hourly"][0]["weatherDesc"][0]["value"]))"
+                        calloutView.locationTempAir.text = "\((responceLocation["data"]["weather"][0]["hourly"][0]["tempC"]))°"
+                        calloutView.locationWindSpeed.text = "\((responceLocation["data"]["weather"][0]["hourly"][0]["windspeedKmph"]))kmph"
+                        calloutView.locationWindDirection.text = "\((responceLocation["data"]["weather"][0]["hourly"][0]["winddir16Point"]))"
+                        calloutView.locationWaveHight.text = "\((responceLocation["data"]["weather"][0]["hourly"][0]["swellHeight_m"]))M"
+                        calloutView.locationWaveDirection.text = "\((responceLocation["data"]["weather"][0]["hourly"][0]["swellDir16Point"]))"
+                        calloutView.locationTempWater.text = "\((responceLocation["data"]["weather"][0]["hourly"][0]["waterTemp_C"]))°"
+                        
+                    }
+                }
                 
             }
         }
