@@ -45,6 +45,7 @@ class JsonLocationService {
                         location.surfDifficulty = json[count]["SurfDifficulty"].int!
                         location.supDifficulty = json[count]["SUPDifficulty"].int!
                         location.whiteWaterDifficulty = json[count]["WhiteWaterDifficulty"].int!
+                        location.showLocation = json[count]["showLocation"].bool!
                         
                         
                         //TODO

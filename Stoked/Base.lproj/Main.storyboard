@@ -16,56 +16,17 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="7zc-q9-GUG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell1" id="sqB-CL-nBY">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sqB-CL-nBY" id="jeL-cc-wzh">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" notEnabled="YES"/>
-                                </accessibility>
-                                <connections>
-                                    <segue destination="Vt5-O4-BsZ" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="93j-zN-XmV"/>
-                                </connections>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell2" id="sjy-Eo-BoM">
-                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sjy-Eo-BoM" id="aA8-aH-wYA">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" notEnabled="YES"/>
-                                </accessibility>
-                                <connections>
-                                    <segue destination="S6t-Aa-hAC" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="07d-p0-lcD"/>
-                                </connections>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell3" id="qIW-mt-cjh">
-                                <rect key="frame" x="0.0" y="116" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qIW-mt-cjh" id="isC-v7-lBS">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" notEnabled="YES"/>
-                                </accessibility>
-                                <connections>
-                                    <segue destination="lrf-ZI-8xh" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="0rG-6G-MIY"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
+                        <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <connections>
                             <outlet property="dataSource" destination="nFy-yq-B7i" id="KOh-ZA-46g"/>
                             <outlet property="delegate" destination="nFy-yq-B7i" id="irt-XI-V1s"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="lrf-ZI-8xh" kind="custom" identifier="segueToNewsView" customClass="SWRevealViewControllerSeguePushController" id="kar-Sx-7Vk"/>
+                        <segue destination="S6t-Aa-hAC" kind="custom" identifier="segueToEventView" customClass="SWRevealViewControllerSeguePushController" id="I6T-pd-h3t"/>
+                        <segue destination="Vt5-O4-BsZ" kind="custom" identifier="segueToMapView" customClass="SWRevealViewControllerSeguePushController" id="tJv-ve-yva"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Baj-UV-8nn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -99,15 +60,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="oId-77-7dm">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="oId-77-7dm">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="opN-Iv-SCg" firstAttribute="top" secondItem="oId-77-7dm" secondAttribute="bottom" id="FXH-a5-wFb"/>
+                            <constraint firstAttribute="trailing" secondItem="oId-77-7dm" secondAttribute="trailing" id="YyG-hy-5d6"/>
+                            <constraint firstItem="oId-77-7dm" firstAttribute="top" secondItem="qso-P3-axc" secondAttribute="bottom" id="bfO-6C-5C6"/>
+                            <constraint firstItem="oId-77-7dm" firstAttribute="leading" secondItem="LTB-LT-JAV" secondAttribute="leading" id="kvR-sy-92c"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bKA-nh-Vml">
-                        <barButtonItem key="leftBarButtonItem" title="OPEN1" id="2uL-ss-yaJ"/>
+                        <barButtonItem key="leftBarButtonItem" image="1478042679_Menu1-1" id="2uL-ss-yaJ">
+                            <color key="tintColor" red="0.2196078431372549" green="0.2196078431372549" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="MapView" destination="oId-77-7dm" id="cHd-xQ-xUJ"/>
@@ -140,7 +108,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H8W-Bd-6mN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2353" y="95"/>
+            <point key="canvasLocation" x="2352.8000000000002" y="94.902548725637189"/>
         </scene>
         <!--News View Controller-->
         <scene sceneID="A42-Vy-UL8">
@@ -225,7 +193,10 @@
             <point key="canvasLocation" x="1590" y="799"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="1478042679_Menu1-1" width="37" height="37"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Tit-Dt-Fu1"/>
+        <segue reference="tJv-ve-yva"/>
     </inferredMetricsTieBreakers>
 </document>
