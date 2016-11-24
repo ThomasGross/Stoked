@@ -20,6 +20,13 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     @IBOutlet weak var lolbtn: UIButton!
     
+    @IBOutlet weak var calloutButton: UIButton!
+    
+    @IBAction func calloutbuttonAction(_ sender: UIButton) {
+        
+        performSegue(withIdentifier: "segueToDetailView", sender: self)
+        
+    }
     // Tells the whether or not to update userlocation
     var relocation : Bool = false
     
@@ -69,13 +76,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         // We only want to use locationmanager when the app is used
         locationManager.requestWhenInUseAuthorization()
         
-    }
-    
-    // called when the region is changed - only in the start of the app because of relocation if statement
-    func mapView(_ mapView: MKMapView, regionWillChangeAnimated animated: Bool) {
-        if relocation {
-            
-        }
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
@@ -149,7 +149,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             annotationView?.canShowCallout = false
             
             
-            
         }else{
             annotationView?.annotation = annotation
         }
@@ -214,32 +213,17 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                         
                     }
                 }
-                
             }
-            
-            
         }
-        
-        
-        
-//        let tapGesture = UITapGestureRecognizer(target: self, action: Selector(("CallPhoneNumber:")))
-//        calloutView.starbucksPhone.addGestureRecognizer(tapGesture)
-//        calloutView.starbucksPhone.isUserInteractionEnabled = true
 
+        
+        self.calloutButton.isHidden = false
         
         let gestureSwift2AndHigher = UITapGestureRecognizer(target: self, action:  #selector (self.didTapDetailsButton (_:)))
         calloutView.addGestureRecognizer(gestureSwift2AndHigher)
         
         calloutView.center = CGPoint(x: view.bounds.size.width / 2, y: -calloutView.bounds.size.height*0.52)
-        print(calloutView.isFirstResponder)
-        
-        calloutView.becomeFirstResponder()
-        print(calloutView.isFirstResponder)
-        
-        let detailsbtn = UIButton(type: .detailDisclosure) as UIButton
-        
-        view.rightCalloutAccessoryView = detailsbtn
-        
+
         view.addSubview(calloutView)
         mapView.setCenter((view.annotation?.coordinate)!, animated: true)
         
@@ -247,17 +231,27 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
  
     }
     
-//    func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
-//        
-//        if view.isKind(of: CustomAnnotationViewModel.self)
-//        {
-//            for subview in view.subviews
-//            {
-//                subview.removeFromSuperview()
-//            }
-//        }
-//    }
+    func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
+        
+        if view.isKind(of: CustomAnnotationViewModel.self)
+        {
+            for subview in view.subviews
+            {
+                self.calloutButton.isHidden = true
+                subview.removeFromSuperview()
+            }
+        }
+    }
+    
 
+    func mapView(_ mapView: MKMapView, regionWillChangeAnimated animated: Bool) {
+        
+        
+        self.calloutButton.isHidden = true
+        
+        
+    }
+    
     func didTapDetailsButton(_ sender: UIButton) {
         print("didTapDetailsButton")
     }

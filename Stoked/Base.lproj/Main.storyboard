@@ -68,6 +68,16 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                             </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rRg-6q-E7N">
+                                <rect key="frame" x="27" y="153" width="322" height="180"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="calloutbuttonAction:" destination="exS-cu-dFS" eventType="touchUpInside" id="NYS-xi-GfM"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -90,6 +100,7 @@
                     <connections>
                         <outlet property="MapView" destination="oId-77-7dm" id="cHd-xQ-xUJ"/>
                         <outlet property="SideMenuButton" destination="2uL-ss-yaJ" id="9dr-S2-o8a"/>
+                        <outlet property="calloutButton" destination="rRg-6q-E7N" id="cn1-87-AiW"/>
                         <outlet property="lolbtn" destination="nTn-Na-lpc" id="ptk-A2-Ltg"/>
                         <segue destination="c1L-6s-aBU" kind="show" identifier="segueToDetailView" id="pE2-Lh-lbT"/>
                     </connections>
