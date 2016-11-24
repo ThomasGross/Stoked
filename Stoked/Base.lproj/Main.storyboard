@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="pws-ib-PPi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="pws-ib-PPi">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -76,6 +76,7 @@
                                 </state>
                                 <connections>
                                     <action selector="calloutbuttonAction:" destination="exS-cu-dFS" eventType="touchUpInside" id="NYS-xi-GfM"/>
+                                    <segue destination="c1L-6s-aBU" kind="showDetail" id="WoB-lR-PWv"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -91,11 +92,7 @@
                         <barButtonItem key="leftBarButtonItem" image="1478042679_Menu1-1" id="2uL-ss-yaJ">
                             <color key="tintColor" red="0.2196078431372549" green="0.2196078431372549" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="play" id="sgn-1H-Baz">
-                            <connections>
-                                <segue destination="c1L-6s-aBU" kind="show" id="8wu-bh-U71"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="play" id="sgn-1H-Baz"/>
                     </navigationItem>
                     <connections>
                         <outlet property="MapView" destination="oId-77-7dm" id="cHd-xQ-xUJ"/>
@@ -152,15 +149,11 @@
         <scene sceneID="NnG-53-jX4">
             <objects>
                 <viewController id="efM-E0-EuL" customClass="EventViewController" customModule="Stoked" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Sye-iB-cdU"/>
-                        <viewControllerLayoutGuide type="bottom" id="m0c-ZD-7pA"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="vWx-xc-WDY">
+                    <webView key="view" contentMode="scaleToFill" id="ojY-9b-7TP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </webView>
                     <navigationItem key="navigationItem" id="jno-ZN-9J5">
                         <barButtonItem key="leftBarButtonItem" image="1478042679_Menu1-1" id="sxr-nv-uOt">
                             <color key="tintColor" red="0.2196078431372549" green="0.2196078431372549" blue="0.2196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -168,6 +161,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="SideMenuButton" destination="sxr-nv-uOt" id="qfH-DE-sbc"/>
+                        <outlet property="webView" destination="ojY-9b-7TP" id="KnU-UU-P8e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H8W-Bd-6mN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -185,6 +179,13 @@
                     <view key="view" contentMode="scaleToFill" id="r8N-na-dr2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r8q-xE-lz8">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Fk3-OA-9iB">
@@ -194,11 +195,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="SideMenuButton" destination="UO0-0M-YWu" id="Ruc-0d-LPy"/>
+                        <outlet property="webView" destination="r8q-xE-lz8" id="eAM-FH-vaM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rNO-cv-fin" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2353" y="798"/>
+            <point key="canvasLocation" x="2352.8000000000002" y="797.45127436281871"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="CM2-tD-RNM">

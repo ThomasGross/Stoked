@@ -10,10 +10,11 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class EventViewController: UIViewController {
+class EventViewController: UIViewController, UIWebViewDelegate {
 
     @IBOutlet weak var SideMenuButton: UIBarButtonItem!
 
+    @IBOutlet var webView: UIWebView!
     var jsonLocationService = JsonLocationService()
     
     var locations: [LocationModel]?
@@ -27,7 +28,11 @@ class EventViewController: UIViewController {
         
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         
-        
+        webView.delegate = self
+        if let url = URL(string: "http://www.dsrf.dk/events/") {
+            let request = URLRequest(url: url)
+            webView.loadRequest(request)
+        }
 
         
         
