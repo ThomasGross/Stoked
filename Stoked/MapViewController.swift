@@ -18,6 +18,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     @IBOutlet weak var MapView: MKMapView!
     
+    @IBOutlet weak var lolbtn: UIButton!
+    
     // Tells the whether or not to update userlocation
     var relocation : Bool = false
     
@@ -30,9 +32,13 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     var locations: [LocationModel] = []
     
+    var tempCalloutLocation: JSON?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        lolbtn.addTarget(self, action: #selector(didTapDetailsButton(_:)), for: .touchUpInside)
         
         SideMenuButton.target = self.revealViewController()
         SideMenuButton.action = #selector(SWRevealViewController.revealToggle(_:))
@@ -142,6 +148,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             annotationView = CustomAnnotationViewModel(annotation: annotation, reuseIdentifier: "Pin")
             annotationView?.canShowCallout = false
             
+            
+            
         }else{
             annotationView?.annotation = annotation
         }
@@ -151,7 +159,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        // 1
+        // 1 First, the method will check whether the selected annotation is a user location related annotation, in such case, it will return without doing anything.
         if view.annotation is MKUserLocation
         {
             // Don't proceed with custom callout
@@ -163,12 +171,9 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         let views = Bundle.main.loadNibNamed("CustomCalloutView", owner: nil, options: nil)
         let calloutView = views?[0] as! CustomCalloutView
         
-        calloutView.layer.cornerRadius = 5;
+        print(calloutView.isUserInteractionEnabled)
         
-        calloutView.layer.shadowColor = UIColor.black.cgColor
-        calloutView.layer.shadowOpacity = 0.5
-        calloutView.layer.shadowOffset = CGSize.zero
-        calloutView.layer.shadowRadius = 5
+        calloutView.infoButton.addTarget(self, action: #selector(didTapDetailsButton(_:)), for: .touchUpInside)
         
         for location in locations {
             if location.locationId == customAnnotation.locationId  {
@@ -196,34 +201,68 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                 
                 DispatchQueue.main.async {
                     self.jsonWeatherService.getWeatherForLocation(id: location.locationId) { responceLocation in
-
-                        calloutView.locationCurrentConditions.text = "\((responceLocation["data"]["weather"][0]["hourly"][0]["weatherDesc"][0]["value"]))"
+                        
+                        let locationCurrentConditionsString = "\((responceLocation["data"]["weather"][0]["hourly"][0]["weatherDesc"][0]["value"]))"
+                        calloutView.locationCurrentConditions.text = locationCurrentConditionsString.uppercased()
                         calloutView.locationTempAir.text = "\((responceLocation["data"]["weather"][0]["hourly"][0]["tempC"]))°"
                         calloutView.locationWindSpeed.text = "\((responceLocation["data"]["weather"][0]["hourly"][0]["windspeedKmph"]))kmph"
                         calloutView.locationWindDirection.text = "\((responceLocation["data"]["weather"][0]["hourly"][0]["winddir16Point"]))"
                         calloutView.locationWaveHight.text = "\((responceLocation["data"]["weather"][0]["hourly"][0]["swellHeight_m"]))M"
-                        calloutView.locationWaveDirection.text = "\((responceLocation["data"]["weather"][0]["hourly"][0]["swellDir16Point"]))"
                         calloutView.locationTempWater.text = "\((responceLocation["data"]["weather"][0]["hourly"][0]["waterTemp_C"]))°"
+                        
+                        self.tempCalloutLocation = responceLocation
                         
                     }
                 }
                 
             }
+            
+            
         }
         
+        
+        
+//        let tapGesture = UITapGestureRecognizer(target: self, action: Selector(("CallPhoneNumber:")))
+//        calloutView.starbucksPhone.addGestureRecognizer(tapGesture)
+//        calloutView.starbucksPhone.isUserInteractionEnabled = true
+
+        
+        let gestureSwift2AndHigher = UITapGestureRecognizer(target: self, action:  #selector (self.didTapDetailsButton (_:)))
+        calloutView.addGestureRecognizer(gestureSwift2AndHigher)
+        
         calloutView.center = CGPoint(x: view.bounds.size.width / 2, y: -calloutView.bounds.size.height*0.52)
+        print(calloutView.isFirstResponder)
+        
+        calloutView.becomeFirstResponder()
+        print(calloutView.isFirstResponder)
+        
+        let detailsbtn = UIButton(type: .detailDisclosure) as UIButton
+        
+        view.rightCalloutAccessoryView = detailsbtn
+        
         view.addSubview(calloutView)
         mapView.setCenter((view.annotation?.coordinate)!, animated: true)
+        
+        
+ 
     }
     
-    func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
-        if view.isKind(of: CustomAnnotationViewModel.self)
-        {
-            for subview in view.subviews
-            {
-                subview.removeFromSuperview()
-            }
-        }
+//    func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
+//        
+//        if view.isKind(of: CustomAnnotationViewModel.self)
+//        {
+//            for subview in view.subviews
+//            {
+//                subview.removeFromSuperview()
+//            }
+//        }
+//    }
+
+    func didTapDetailsButton(_ sender: UIButton) {
+        print("didTapDetailsButton")
+    }
+    func didTapDetailsButton() {
+        print("didTapDetailsButton")
     }
     
     

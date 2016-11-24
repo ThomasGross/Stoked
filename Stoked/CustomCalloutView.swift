@@ -27,12 +27,42 @@ class CustomCalloutView: UIView {
     @IBOutlet weak var locationWaveDirection: UILabel!
     
     @IBOutlet weak var locationTempWater: UILabel!
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    
+    @IBOutlet weak var infoButton: UIButton!
+    
+    
+    func setup() {
+        super.layer.borderWidth = 0.3
+        super.layer.borderColor = UIColor(red:0.22, green:0.22, blue:0.22, alpha:0.7).cgColor
+        super.layer.backgroundColor = UIColor.clear.cgColor
+        
     }
-    */
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.setup()
+        
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.setup()
+    }
+    
+    
+    override func draw(_ rect: CGRect) {
+        
+        let aPath = UIBezierPath()
+        let strokeColor = UIColor(red:0.22, green:0.22, blue:0.22, alpha:0.7)
+        
+        aPath.lineWidth = 0.3
+        aPath.move(to: CGPoint(x: 0, y: 88))
+        aPath.addLine(to: CGPoint(x: 320, y: 88))
+        aPath.close()
+        strokeColor.setStroke()
+        aPath.stroke()
+        
+        
+    }
 
 }

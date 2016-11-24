@@ -26,7 +26,7 @@ class SlideMenuTableViewController: UITableViewController {
         arrayOfCellData = [cellData(cellId: 1, text: "", image:  #imageLiteral(resourceName: "STOKED_LOGO_COLOUR_RGB")),
                            cellData(cellId: 2, text: "Locations", image: #imageLiteral(resourceName: "location-arrow-icon-64986")),
                            cellData(cellId: 2, text: "Events", image: #imageLiteral(resourceName: "Planner")),
-                           cellData(cellId: 2, text: "Newsfeed", image: #imageLiteral(resourceName: "More"))]
+                           cellData(cellId: 2, text: "Newsfeed", image: #imageLiteral(resourceName: "More")),]
         
         
     }
