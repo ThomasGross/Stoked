@@ -63,17 +63,10 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="oId-77-7dm">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nTn-Na-lpc">
-                                <rect key="frame" x="313" y="629" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                            </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rRg-6q-E7N">
                                 <rect key="frame" x="27" y="153" width="322" height="180"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </state>
+                                <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="calloutbuttonAction:" destination="exS-cu-dFS" eventType="touchUpInside" id="NYS-xi-GfM"/>
                                 </connections>
@@ -91,17 +84,11 @@
                         <barButtonItem key="leftBarButtonItem" image="1478042679_Menu1-1" id="2uL-ss-yaJ">
                             <color key="tintColor" red="0.2196078431372549" green="0.2196078431372549" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="play" id="sgn-1H-Baz">
-                            <connections>
-                                <segue destination="c1L-6s-aBU" kind="show" id="8wu-bh-U71"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="MapView" destination="oId-77-7dm" id="cHd-xQ-xUJ"/>
                         <outlet property="SideMenuButton" destination="2uL-ss-yaJ" id="9dr-S2-o8a"/>
                         <outlet property="calloutButton" destination="rRg-6q-E7N" id="cn1-87-AiW"/>
-                        <outlet property="lolbtn" destination="nTn-Na-lpc" id="ptk-A2-Ltg"/>
                         <segue destination="c1L-6s-aBU" kind="show" identifier="segueToDetailView" id="pE2-Lh-lbT"/>
                     </connections>
                 </viewController>
@@ -129,10 +116,10 @@
                                 <rect key="frame" x="16" y="79" width="103" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xoK-tW-TmP">
-                                <rect key="frame" x="11" y="156" width="353" height="511"/>
+                            <tableView contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xoK-tW-TmP">
+                                <rect key="frame" x="7" y="153" width="362" height="514"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -266,6 +253,5 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="tJv-ve-yva"/>
-        <segue reference="pE2-Lh-lbT"/>
     </inferredMetricsTieBreakers>
 </document>

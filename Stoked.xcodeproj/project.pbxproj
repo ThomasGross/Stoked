@@ -30,8 +30,13 @@
 		0D5CED951DE461BE00FB533C /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5CED941DE461BE00FB533C /* UIViewExtensions.swift */; };
 		0D5CED971DE484EF00FB533C /* LocationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5CED961DE484EF00FB533C /* LocationDetailViewController.swift */; };
 		0D5CED9D1DE5E93200FB533C /* UIImageEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5CED9C1DE5E93200FB533C /* UIImageEffects.swift */; };
+		0D5CEE411DE725C400A5083C /* DetailDecriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5CEE3F1DE725C400A5083C /* DetailDecriptionCell.swift */; };
+		0D5CEE421DE725C400A5083C /* DetailDecriptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D5CEE401DE725C400A5083C /* DetailDecriptionCell.xib */; };
+		0D5CEE451DE757F800A5083C /* WeatherForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5CEE431DE757F800A5083C /* WeatherForecastCell.swift */; };
+		0D5CEE461DE757F800A5083C /* WeatherForecastCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D5CEE441DE757F800A5083C /* WeatherForecastCell.xib */; };
 		0D7A13DC1DDB48A3003AAE4B /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7A13DB1DDB48A3003AAE4B /* LocationModel.swift */; };
 		0D7A13E11DDB5DA0003AAE4B /* JsonLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7A13E01DDB5DA0003AAE4B /* JsonLocationService.swift */; };
+		0D8AB83B1DE870C80073B0AB /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8AB83A1DE870C80073B0AB /* DateExtension.swift */; };
 		138560E1F9EA87B62DE934DA /* Pods_Stoked.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2E23F3DEB60981741C15847 /* Pods_Stoked.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,8 +68,13 @@
 		0D5CED941DE461BE00FB533C /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		0D5CED961DE484EF00FB533C /* LocationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDetailViewController.swift; sourceTree = "<group>"; };
 		0D5CED9C1DE5E93200FB533C /* UIImageEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageEffects.swift; sourceTree = "<group>"; };
+		0D5CEE3F1DE725C400A5083C /* DetailDecriptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailDecriptionCell.swift; sourceTree = "<group>"; };
+		0D5CEE401DE725C400A5083C /* DetailDecriptionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailDecriptionCell.xib; sourceTree = "<group>"; };
+		0D5CEE431DE757F800A5083C /* WeatherForecastCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherForecastCell.swift; sourceTree = "<group>"; };
+		0D5CEE441DE757F800A5083C /* WeatherForecastCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeatherForecastCell.xib; sourceTree = "<group>"; };
 		0D7A13DB1DDB48A3003AAE4B /* LocationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		0D7A13E01DDB5DA0003AAE4B /* JsonLocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonLocationService.swift; sourceTree = "<group>"; };
+		0D8AB83A1DE870C80073B0AB /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		24663D96828F2B531D953FFA /* Pods-Stoked.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stoked.release.xcconfig"; path = "Pods/Target Support Files/Pods-Stoked/Pods-Stoked.release.xcconfig"; sourceTree = "<group>"; };
 		56987066F372C920424954A2 /* Pods-Stoked.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stoked.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Stoked/Pods-Stoked.debug.xcconfig"; sourceTree = "<group>"; };
 		E2E23F3DEB60981741C15847 /* Pods_Stoked.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stoked.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,6 +114,10 @@
 		0D1237191DD517E30036A89F /* Stoked */ = {
 			isa = PBXGroup;
 			children = (
+				0D5CEE431DE757F800A5083C /* WeatherForecastCell.swift */,
+				0D5CEE441DE757F800A5083C /* WeatherForecastCell.xib */,
+				0D5CEE3F1DE725C400A5083C /* DetailDecriptionCell.swift */,
+				0D5CEE401DE725C400A5083C /* DetailDecriptionCell.xib */,
 				0D0AC39C1DE2F407008216A6 /* CustomCalloutView.swift */,
 				0D0AC3A21DE2F6F1008216A6 /* CustomCalloutView.xib */,
 				0D0AC3921DDE38F0008216A6 /* SlideMenuTopCell.swift */,
@@ -148,6 +162,7 @@
 			children = (
 				0D5CED9C1DE5E93200FB533C /* UIImageEffects.swift */,
 				0D5CED941DE461BE00FB533C /* UIViewExtensions.swift */,
+				0D8AB83A1DE870C80073B0AB /* DateExtension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -269,12 +284,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D5CEE421DE725C400A5083C /* DetailDecriptionCell.xib in Resources */,
 				0D1237281DD517E30036A89F /* LaunchScreen.storyboard in Resources */,
 				0D0AC3991DDE45EE008216A6 /* SlideMenuItemCell.xib in Resources */,
 				0D0AC3951DDE38F0008216A6 /* SlideMenuTopCell.xib in Resources */,
 				0D0AC3A31DE2F6F1008216A6 /* CustomCalloutView.xib in Resources */,
 				0D0AC3A71DE3213C008216A6 /* Assets.xcassets in Resources */,
 				0D1237201DD517E30036A89F /* Main.storyboard in Resources */,
+				0D5CEE461DE757F800A5083C /* WeatherForecastCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,13 +351,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D7A13DC1DDB48A3003AAE4B /* LocationModel.swift in Sources */,
+				0D8AB83B1DE870C80073B0AB /* DateExtension.swift in Sources */,
 				0D1237391DD53BA30036A89F /* EventViewController.swift in Sources */,
 				0D5CED9D1DE5E93200FB533C /* UIImageEffects.swift in Sources */,
 				0D0AC3A51DE30BE2008216A6 /* CustomAnnotationViewModel.swift in Sources */,
 				0D0AC39D1DE2F407008216A6 /* CustomCalloutView.swift in Sources */,
 				0D5CED971DE484EF00FB533C /* LocationDetailViewController.swift in Sources */,
 				0D133FE01DDC80D70005D07E /* JsonWeatherService.swift in Sources */,
+				0D5CEE451DE757F800A5083C /* WeatherForecastCell.swift in Sources */,
 				0D1237371DD523AA0036A89F /* SlideMenuTableViewController.swift in Sources */,
+				0D5CEE411DE725C400A5083C /* DetailDecriptionCell.swift in Sources */,
 				0D0AC38F1DDDACFB008216A6 /* CustomAnnotationModel.swift in Sources */,
 				0D12371D1DD517E30036A89F /* MapViewController.swift in Sources */,
 				0D1237231DD517E30036A89F /* Stoked.xcdatamodeld in Sources */,
@@ -394,6 +414,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -443,6 +464,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -471,6 +493,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 56987066F372C920424954A2 /* Pods-Stoked.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Stoked/Info.plist;
@@ -487,6 +510,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 24663D96828F2B531D953FFA /* Pods-Stoked.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Stoked/Info.plist;

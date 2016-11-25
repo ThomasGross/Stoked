@@ -40,12 +40,11 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     var locations: [LocationModel] = []
     
     var tempCalloutLocation: JSON?
+    var tempLocation: LocationModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        lolbtn.addTarget(self, action: #selector(didTapDetailsButton(_:)), for: .touchUpInside)
         
         SideMenuButton.target = self.revealViewController()
         SideMenuButton.action = #selector(SWRevealViewController.revealToggle(_:))
@@ -177,6 +176,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         for location in locations {
             if location.locationId == customAnnotation.locationId  {
                 
+                tempLocation = location
+                
                 calloutView.locationName.text = location.locationName
                 
                 calloutView.locationCategories.text = ""
@@ -201,13 +202,19 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                 DispatchQueue.main.async {
                     self.jsonWeatherService.getWeatherForLocation(id: location.locationId) { responceLocation in
                         
-                        let locationCurrentConditionsString = "\((responceLocation["data"]["weather"][0]["hourly"][0]["weatherDesc"][0]["value"]))"
-                        calloutView.locationCurrentConditions.text = locationCurrentConditionsString.uppercased()
-                        calloutView.locationTempAir.text = "\((responceLocation["data"]["weather"][0]["hourly"][0]["tempC"]))°"
-                        calloutView.locationWindSpeed.text = "\((responceLocation["data"]["weather"][0]["hourly"][0]["windspeedKmph"]))kmph"
-                        calloutView.locationWindDirection.text = "\((responceLocation["data"]["weather"][0]["hourly"][0]["winddir16Point"]))"
-                        calloutView.locationWaveHight.text = "\((responceLocation["data"]["weather"][0]["hourly"][0]["swellHeight_m"]))M"
-                        calloutView.locationTempWater.text = "\((responceLocation["data"]["weather"][0]["hourly"][0]["waterTemp_C"]))°"
+                        var tempString: String = ""
+                        tempString = responceLocation["data"]["weather"][0]["hourly"][0]["weatherDesc"][0]["value"].stringValue
+                        calloutView.locationCurrentConditions.text = tempString.uppercased()
+                        tempString = responceLocation["data"]["weather"][0]["hourly"][0]["tempC"].stringValue
+                        calloutView.locationTempAir.text = tempString
+                        tempString = responceLocation["data"]["weather"][0]["hourly"][0]["windspeedKmph"].stringValue
+                        calloutView.locationWindSpeed.text = tempString
+                        tempString = responceLocation["data"]["weather"][0]["hourly"][0]["winddir16Point"].stringValue
+                        calloutView.locationWindDirection.text = tempString
+                        tempString = responceLocation["data"]["weather"][0]["hourly"][0]["swellHeight_m"].stringValue
+                        calloutView.locationWaveHight.text = tempString
+                        tempString = responceLocation["data"]["weather"][0]["hourly"][0]["waterTemp_C"].stringValue
+                        calloutView.locationTempWater.text = tempString
                         
                         self.tempCalloutLocation = responceLocation
                         
@@ -243,12 +250,14 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         }
     }
     
-
     func mapView(_ mapView: MKMapView, regionWillChangeAnimated animated: Bool) {
         
-        
-        self.calloutButton.isHidden = true
-        
+        if animated == false {
+            self.calloutButton.isHidden = true
+           
+        }else {
+            
+        }
         
     }
     
@@ -257,6 +266,16 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     }
     func didTapDetailsButton() {
         print("didTapDetailsButton")
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueToDetailView" {
+            if let vc = segue.destination as? LocationDetailViewController {
+                vc.json = tempCalloutLocation
+                vc.location = tempLocation
+            }
+        }
     }
     
     
