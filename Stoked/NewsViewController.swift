@@ -9,10 +9,11 @@
 import UIKit
 
 
-class NewsViewController: UIViewController {
+class NewsViewController: UIViewController, UIWebViewDelegate {
 
     @IBOutlet weak var SideMenuButton: UIBarButtonItem!
     
+    @IBOutlet weak var webView: UIWebView!
     var jsonWeatherService = JsonWeatherService()
     
     override func viewDidLoad() {
@@ -25,6 +26,11 @@ class NewsViewController: UIViewController {
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         // Do any additional setup after loading the view.
         
+        webView.delegate = self
+        if let url = URL(string: "http://www.dsrf.dk/nyheder/") {
+            let request = URLRequest(url: url)
+            webView.loadRequest(request)
+        }
         
     }
 

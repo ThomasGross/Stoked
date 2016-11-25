@@ -10,10 +10,11 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class EventViewController: UIViewController {
+class EventViewController: UIViewController, UIWebViewDelegate {
 
     @IBOutlet weak var SideMenuButton: UIBarButtonItem!
 
+    @IBOutlet var webView: UIWebView!
     var jsonLocationService = JsonLocationService()
     
     var locations: [LocationModel]?
