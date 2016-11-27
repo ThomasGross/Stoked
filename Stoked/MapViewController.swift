@@ -193,10 +193,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         let views = Bundle.main.loadNibNamed("CustomCalloutView", owner: nil, options: nil)
         let calloutView = views?[0] as! CustomCalloutView
         
-        print(calloutView.isUserInteractionEnabled)
-        
-        calloutView.infoButton.addTarget(self, action: #selector(didTapDetailsButton(_:)), for: .touchUpInside)
-        
         for location in locations {
             if location.locationId == customAnnotation.locationId  {
                 
@@ -252,19 +248,13 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                 }
             }
         }
-
         
         self.calloutButton.isHidden = false
-        
-        let gestureSwift2AndHigher = UITapGestureRecognizer(target: self, action:  #selector (self.didTapDetailsButton (_:)))
-        calloutView.addGestureRecognizer(gestureSwift2AndHigher)
         
         calloutView.center = CGPoint(x: view.bounds.size.width / 2, y: -calloutView.bounds.size.height*0.52)
 
         view.addSubview(calloutView)
         mapView.setCenter((view.annotation?.coordinate)!, animated: true)
-        
-        
  
     }
     
@@ -290,14 +280,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         }
         
     }
-    
-    func didTapDetailsButton(_ sender: UIButton) {
-        print("didTapDetailsButton")
-    }
-    func didTapDetailsButton() {
-        print("didTapDetailsButton")
-    }
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueToDetailView" {

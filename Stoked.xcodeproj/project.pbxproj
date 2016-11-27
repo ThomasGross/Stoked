@@ -29,6 +29,8 @@
 		0D133FE01DDC80D70005D07E /* JsonWeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D133FDF1DDC80D70005D07E /* JsonWeatherService.swift */; };
 		0D1C52D71DE9BCCA00E2F9C4 /* WindForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C52D51DE9BCCA00E2F9C4 /* WindForecastCell.swift */; };
 		0D1C52D81DE9BCCA00E2F9C4 /* WindForecastCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D1C52D61DE9BCCA00E2F9C4 /* WindForecastCell.xib */; };
+		0D1C52E31DEB770000E2F9C4 /* WaveForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C52E11DEB770000E2F9C4 /* WaveForecastCell.swift */; };
+		0D1C52E41DEB770000E2F9C4 /* WaveForecastCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D1C52E21DEB770000E2F9C4 /* WaveForecastCell.xib */; };
 		0D5CED951DE461BE00FB533C /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5CED941DE461BE00FB533C /* UIViewExtensions.swift */; };
 		0D5CED971DE484EF00FB533C /* LocationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5CED961DE484EF00FB533C /* LocationDetailViewController.swift */; };
 		0D5CED9D1DE5E93200FB533C /* UIImageEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5CED9C1DE5E93200FB533C /* UIImageEffects.swift */; };
@@ -69,6 +71,8 @@
 		0D133FDF1DDC80D70005D07E /* JsonWeatherService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonWeatherService.swift; sourceTree = "<group>"; };
 		0D1C52D51DE9BCCA00E2F9C4 /* WindForecastCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindForecastCell.swift; sourceTree = "<group>"; };
 		0D1C52D61DE9BCCA00E2F9C4 /* WindForecastCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WindForecastCell.xib; sourceTree = "<group>"; };
+		0D1C52E11DEB770000E2F9C4 /* WaveForecastCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveForecastCell.swift; sourceTree = "<group>"; };
+		0D1C52E21DEB770000E2F9C4 /* WaveForecastCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WaveForecastCell.xib; sourceTree = "<group>"; };
 		0D5CED941DE461BE00FB533C /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		0D5CED961DE484EF00FB533C /* LocationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDetailViewController.swift; sourceTree = "<group>"; };
 		0D5CED9C1DE5E93200FB533C /* UIImageEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageEffects.swift; sourceTree = "<group>"; };
@@ -118,6 +122,8 @@
 		0D1237191DD517E30036A89F /* Stoked */ = {
 			isa = PBXGroup;
 			children = (
+				0D1C52E11DEB770000E2F9C4 /* WaveForecastCell.swift */,
+				0D1C52E21DEB770000E2F9C4 /* WaveForecastCell.xib */,
 				0D1C52D51DE9BCCA00E2F9C4 /* WindForecastCell.swift */,
 				0D1C52D61DE9BCCA00E2F9C4 /* WindForecastCell.xib */,
 				0D5CEE431DE757F800A5083C /* WeatherForecastCell.swift */,
@@ -299,6 +305,7 @@
 				0D0AC3A71DE3213C008216A6 /* Assets.xcassets in Resources */,
 				0D1237201DD517E30036A89F /* Main.storyboard in Resources */,
 				0D5CEE461DE757F800A5083C /* WeatherForecastCell.xib in Resources */,
+				0D1C52E41DEB770000E2F9C4 /* WaveForecastCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,6 +381,7 @@
 				0D12373B1DD53ED90036A89F /* NewsViewController.swift in Sources */,
 				0D5CED951DE461BE00FB533C /* UIViewExtensions.swift in Sources */,
 				0D1C52D71DE9BCCA00E2F9C4 /* WindForecastCell.swift in Sources */,
+				0D1C52E31DEB770000E2F9C4 /* WaveForecastCell.swift in Sources */,
 				0D0AC3981DDE45EE008216A6 /* SlideMenuItemCell.swift in Sources */,
 				0D12371B1DD517E30036A89F /* AppDelegate.swift in Sources */,
 				0D1237331DD51FC40036A89F /* SWRevealViewController.m in Sources */,
