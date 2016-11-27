@@ -14,11 +14,11 @@ import SwiftyJSON
 
 class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
+    @IBOutlet weak var locationActivityIndicator: UIActivityIndicatorView!
+    
     @IBOutlet weak var SideMenuButton: UIBarButtonItem!
     
     @IBOutlet weak var MapView: MKMapView!
-    
-    @IBOutlet weak var lolbtn: UIButton!
     
     @IBOutlet weak var calloutButton: UIButton!
     
@@ -45,6 +45,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        locationActivityIndicator.startAnimating()
         
         SideMenuButton.target = self.revealViewController()
         SideMenuButton.action = #selector(SWRevealViewController.revealToggle(_:))
@@ -59,6 +60,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                 // add annotation placer method here
                 self.addAnnotations()
                 
+                self.locationActivityIndicator.stopAnimating()
+                self.locationActivityIndicator.isHidden = true
             }
         }
         
@@ -151,9 +154,30 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         }else{
             annotationView?.annotation = annotation
         }
-        annotationView?.image = UIImage(named: "More")
+        annotationView?.image = UIImage(named: "Location-Pin")
         return annotationView
     }
+    
+    func mapView(_ mapView: MKMapView, didAdd views: [MKAnnotationView]) {
+        let visibleRect = mapView.annotationVisibleRect
+        
+        for view:MKAnnotationView in views{
+            let endFrame:CGRect = view.frame
+            var startFrame:CGRect = endFrame
+            startFrame.origin.y = visibleRect.origin.y - startFrame.size.height
+            view.frame = startFrame;
+            
+            UIView.beginAnimations("drop", context: nil)
+            
+            UIView.setAnimationDuration(2)
+            
+            view.frame = endFrame;
+            
+            
+            UIView.commitAnimations()
+        }
+    }
+    
     
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {

@@ -70,6 +70,10 @@
                                     <action selector="calloutbuttonAction:" destination="exS-cu-dFS" eventType="touchUpInside" id="NYS-xi-GfM"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="QuE-5X-SzX">
+                                <rect key="frame" x="339" y="72" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -88,6 +92,7 @@
                         <outlet property="MapView" destination="oId-77-7dm" id="cHd-xQ-xUJ"/>
                         <outlet property="SideMenuButton" destination="2uL-ss-yaJ" id="9dr-S2-o8a"/>
                         <outlet property="calloutButton" destination="rRg-6q-E7N" id="cn1-87-AiW"/>
+                        <outlet property="locationActivityIndicator" destination="QuE-5X-SzX" id="x5J-SM-KLs"/>
                         <segue destination="c1L-6s-aBU" kind="show" identifier="segueToDetailView" id="pE2-Lh-lbT"/>
                     </connections>
                 </viewController>
