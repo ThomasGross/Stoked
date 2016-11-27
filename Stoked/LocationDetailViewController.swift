@@ -71,24 +71,93 @@ class LocationDetailViewController: UIViewController, UITableViewDelegate, UITab
         } else if arrayOfCellData[indexPath.row].cellId == 2 {
             let cell = Bundle.main.loadNibNamed("WindForecastCell", owner: self, options: nil)?.first as! WindForecastCell
             
-            // Todays wind
+            var tempWindDirect: String = ""
+            var tempWindSpeed: String = ""
+            var tempWindDirectionDegree: Double = 0.0
+            var tempimageIcon: UIImage?
             
+            // Todays wind
+            tempWindDirect = json["data"]["weather"][0]["hourly"][0]["winddir16Point"].stringValue
+            cell.currentWindDirection.text = tempWindDirect
+            tempWindSpeed = json["data"]["weather"][0]["hourly"][0]["windspeedKmph"].stringValue
+            cell.currentWindSpeed.text = tempWindSpeed
+            
+            // Icon rotation
+            tempWindDirectionDegree = json["data"]["weather"][0]["hourly"][0]["winddirDegree"].doubleValue
+            print(tempWindDirectionDegree)
+            cell.currentWindDirectionIcon.transform = CGAffineTransform(rotationAngle: CGFloat(tempWindDirectionDegree * M_PI/180))
+            tempimageIcon = cell.currentWindDirectionIcon.image?.imageWithColor(color: UIColor(red:0.69, green:0.81, blue:0.86, alpha:1.0))
+            cell.currentWindDirectionIcon.image = tempimageIcon
             
             // First day wind
             tempWeekDayName = json["data"]["weather"][1]["date"].stringValue
             cell.firstDayName.text = Date().getDayOfWeek(today: tempWeekDayName)
             
+            tempWindDirect = json["data"]["weather"][1]["hourly"][0]["winddir16Point"].stringValue
+            cell.firstDayWindDirection.text = tempWindDirect
+            tempWindSpeed = json["data"]["weather"][1]["hourly"][0]["windspeedKmph"].stringValue
+            cell.firstDayWindSpeed.text = tempWindSpeed
+            
+            // Icon
+            tempWindDirectionDegree = json["data"]["weather"][1]["hourly"][0]["winddirDegree"].doubleValue
+            print(tempWindDirectionDegree)
+            cell.firstDayWindIDirectIcon.transform = CGAffineTransform(rotationAngle: CGFloat(tempWindDirectionDegree * M_PI/180))
+            tempimageIcon = cell.firstDayWindIDirectIcon.image?.imageWithColor(color: UIColor(red:0.69, green:0.81, blue:0.86, alpha:1.0))
+            cell.firstDayWindIDirectIcon.image = tempimageIcon
+            
+            
             // Second day wind
             tempWeekDayName = json["data"]["weather"][2]["date"].stringValue
             cell.secondDayName.text = Date().getDayOfWeek(today: tempWeekDayName)
+            
+            tempWindDirect = json["data"]["weather"][2]["hourly"][0]["winddir16Point"].stringValue
+            cell.secondDayWindDirect.text = tempWindDirect
+            tempWindSpeed = json["data"]["weather"][2]["hourly"][0]["windspeedKmph"].stringValue
+            cell.secondDayWindSpeed.text = tempWindSpeed
+            
+            // Icon
+            tempWindDirectionDegree = json["data"]["weather"][2]["hourly"][0]["winddirDegree"].doubleValue
+            print(tempWindDirectionDegree)
+            cell.secondDayWindDirectIcon.transform = CGAffineTransform(rotationAngle: CGFloat(tempWindDirectionDegree * M_PI/180))
+            tempimageIcon = cell.secondDayWindDirectIcon.image?.imageWithColor(color: UIColor(red:0.69, green:0.81, blue:0.86, alpha:1.0))
+            cell.secondDayWindDirectIcon.image = tempimageIcon
             
             // Third day wind
             tempWeekDayName = json["data"]["weather"][3]["date"].stringValue
             cell.thirdDayName.text = Date().getDayOfWeek(today: tempWeekDayName)
             
+            tempWindDirect = json["data"]["weather"][3]["hourly"][0]["winddir16Point"].stringValue
+            cell.thirdDayWindDirect.text = tempWindDirect
+            tempWindSpeed = json["data"]["weather"][3]["hourly"][0]["windspeedKmph"].stringValue
+            cell.thirdDayWindSpeed.text = tempWindSpeed
+            
+            // Icon
+            tempWindDirectionDegree = json["data"]["weather"][3]["hourly"][0]["winddirDegree"].doubleValue
+            print(tempWindDirectionDegree)
+            cell.thirdDayWindDirectIcon.transform = CGAffineTransform(rotationAngle: CGFloat(tempWindDirectionDegree * M_PI/180))
+            tempimageIcon = cell.thirdDayWindDirectIcon.image?.imageWithColor(color: UIColor(red:0.69, green:0.81, blue:0.86, alpha:1.0))
+            cell.thirdDayWindDirectIcon.image = tempimageIcon
+            
+            
             // Fourth day wind
             tempWeekDayName = json["data"]["weather"][4]["date"].stringValue
             cell.fourthDayName.text = Date().getDayOfWeek(today: tempWeekDayName)
+            
+            tempWindDirect = json["data"]["weather"][4]["hourly"][0]["winddir16Point"].stringValue
+            cell.fourthDayWindDirect.text = tempWindDirect
+            tempWindSpeed = json["data"]["weather"][4]["hourly"][0]["windspeedKmph"].stringValue
+            cell.fourthDayWindSpeed.text = tempWindSpeed
+            
+            // Icon rotation
+            tempWindDirectionDegree = json["data"]["weather"][4]["hourly"][0]["winddirDegree"].doubleValue
+            print(tempWindDirectionDegree)
+            cell.fourthDayWindDirectIcon.transform = CGAffineTransform(rotationAngle: CGFloat(tempWindDirectionDegree * M_PI/180))
+            tempimageIcon = cell.fourthDayWindDirectIcon.image?.imageWithColor(color: UIColor(red:0.69, green:0.81, blue:0.86, alpha:1.0))
+            cell.fourthDayWindDirectIcon.image = tempimageIcon
+            
+            
+
+            
             
             return cell
         
