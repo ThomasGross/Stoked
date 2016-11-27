@@ -206,14 +206,20 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                         tempString = responceLocation["data"]["weather"][0]["hourly"][0]["weatherDesc"][0]["value"].stringValue
                         calloutView.locationCurrentConditions.text = tempString.uppercased()
                         tempString = responceLocation["data"]["weather"][0]["hourly"][0]["tempC"].stringValue
+                        tempString.append("°")
                         calloutView.locationTempAir.text = tempString
                         tempString = responceLocation["data"]["weather"][0]["hourly"][0]["windspeedKmph"].stringValue
+                        tempString.append("Kmph")
                         calloutView.locationWindSpeed.text = tempString
                         tempString = responceLocation["data"]["weather"][0]["hourly"][0]["winddir16Point"].stringValue
                         calloutView.locationWindDirection.text = tempString
                         tempString = responceLocation["data"]["weather"][0]["hourly"][0]["swellHeight_m"].stringValue
+                        tempString.append("m")
                         calloutView.locationWaveHight.text = tempString
+                        tempString = responceLocation["data"]["weather"][0]["hourly"][0]["swellDir16Point"].stringValue
+                        calloutView.locationWaveDirection.text = tempString
                         tempString = responceLocation["data"]["weather"][0]["hourly"][0]["waterTemp_C"].stringValue
+                        tempString.append("°")
                         calloutView.locationTempWater.text = tempString
                         
                         self.tempCalloutLocation = responceLocation

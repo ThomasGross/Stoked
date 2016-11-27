@@ -16,6 +16,7 @@ struct detailCellData {
 
 class LocationDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
 
+    @IBOutlet weak var locationDetailNavigationItem: UINavigationItem!
     
     @IBOutlet weak var backgroundImage: UIImageView!
     
@@ -32,6 +33,9 @@ class LocationDetailViewController: UIViewController, UITableViewDelegate, UITab
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        locationDetailNavigationItem.title = location.locationName
+        
+        
         image = UIImage(named: "Surf4.Foto-Gjerluff-Photography-1030x686-2")
         
         backgroundImage.image = image.applyBlurWithRadius(5, tintColor: UIColor(red:0.33, green:0.81, blue:1.00, alpha:0.1), saturationDeltaFactor: 1.8)
@@ -40,7 +44,8 @@ class LocationDetailViewController: UIViewController, UITableViewDelegate, UITab
         detailTableView.dataSource = self
         
         arrayOfCellData = [detailCellData(cellId: 1, cellName: "description"),
-                           detailCellData(cellId: 2, cellName: "weatherforecast")]
+                           detailCellData(cellId: 2, cellName: "windforecast"),
+                           detailCellData(cellId: 3, cellName: "weatherforecast")]
         
         print(json)
         
@@ -55,6 +60,8 @@ class LocationDetailViewController: UIViewController, UITableViewDelegate, UITab
     // create a cell for each table view row
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        var tempWeekDayName: String = ""
+        
         if arrayOfCellData[indexPath.row].cellId == 1 {
             let cell = Bundle.main.loadNibNamed("DetailDecriptionCell", owner: self, options: nil)?.first as! DetailDecriptionCell
             
@@ -62,6 +69,30 @@ class LocationDetailViewController: UIViewController, UITableViewDelegate, UITab
             
             return cell
         } else if arrayOfCellData[indexPath.row].cellId == 2 {
+            let cell = Bundle.main.loadNibNamed("WindForecastCell", owner: self, options: nil)?.first as! WindForecastCell
+            
+            // Todays wind
+            
+            
+            // First day wind
+            tempWeekDayName = json["data"]["weather"][1]["date"].stringValue
+            cell.firstDayName.text = Date().getDayOfWeek(today: tempWeekDayName)
+            
+            // Second day wind
+            tempWeekDayName = json["data"]["weather"][2]["date"].stringValue
+            cell.secondDayName.text = Date().getDayOfWeek(today: tempWeekDayName)
+            
+            // Third day wind
+            tempWeekDayName = json["data"]["weather"][3]["date"].stringValue
+            cell.thirdDayName.text = Date().getDayOfWeek(today: tempWeekDayName)
+            
+            // Fourth day wind
+            tempWeekDayName = json["data"]["weather"][4]["date"].stringValue
+            cell.fourthDayName.text = Date().getDayOfWeek(today: tempWeekDayName)
+            
+            return cell
+        
+        } else if arrayOfCellData[indexPath.row].cellId == 3 {
             let cell = Bundle.main.loadNibNamed("WeatherForecastCell", owner: self, options: nil)?.first as! WeatherForecastCell
             
             // Current weather
@@ -77,8 +108,6 @@ class LocationDetailViewController: UIViewController, UITableViewDelegate, UITab
             
             var tempMin: String = ""
             var tempMax: String = ""
-            
-            var tempWeekDayName: String = ""
             
             // First day weather
             tempMin = json["data"]["weather"][1]["mintempC"].stringValue
@@ -134,7 +163,9 @@ class LocationDetailViewController: UIViewController, UITableViewDelegate, UITab
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if arrayOfCellData[indexPath.row].cellId == 1 {
-            return 379
+            return 459
+        } else if arrayOfCellData[indexPath.row].cellId == 2 {
+            return 238
         } else {
             return 379
         }
