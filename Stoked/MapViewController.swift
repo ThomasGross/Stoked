@@ -55,7 +55,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         DispatchQueue.main.async {
             self.jsonLocationService.getLocations() { responceLocation in
                 self.locations = responceLocation
-                print(responceLocation[0].locationName)
+                print(responceLocation[0].bestWindDirection)
                 // todo
                 // add annotation placer method here
                 self.addAnnotations()
@@ -77,6 +77,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         
         // We only want to use locationmanager when the app is used
         locationManager.requestWhenInUseAuthorization()
+        
         
     }
     
@@ -158,25 +159,25 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         return annotationView
     }
     
-    func mapView(_ mapView: MKMapView, didAdd views: [MKAnnotationView]) {
-        let visibleRect = mapView.annotationVisibleRect
-        
-        for view:MKAnnotationView in views{
-            let endFrame:CGRect = view.frame
-            var startFrame:CGRect = endFrame
-            startFrame.origin.y = visibleRect.origin.y - startFrame.size.height
-            view.frame = startFrame;
-            
-            UIView.beginAnimations("drop", context: nil)
-            
-            UIView.setAnimationDuration(2)
-            
-            view.frame = endFrame;
-            
-            
-            UIView.commitAnimations()
-        }
-    }
+//    func mapView(_ mapView: MKMapView, didAdd views: [MKAnnotationView]) {
+//        let visibleRect = mapView.annotationVisibleRect
+//        
+//        for view:MKAnnotationView in views{
+//            let endFrame:CGRect = view.frame
+//            var startFrame:CGRect = endFrame
+//            startFrame.origin.y = visibleRect.origin.y - startFrame.size.height
+//            view.frame = startFrame;
+//            
+//            UIView.beginAnimations("drop", context: nil)
+//            
+//            UIView.setAnimationDuration(1.5)
+//            
+//            view.frame = endFrame;
+//            
+//            
+//            UIView.commitAnimations()
+//        }
+//    }
     
     
     
@@ -286,6 +287,13 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             if let vc = segue.destination as? LocationDetailViewController {
                 vc.json = tempCalloutLocation
                 vc.location = tempLocation
+                let backItem = UIBarButtonItem()
+                backItem.title = ""
+                
+                navigationItem.backBarButtonItem = backItem
+                // to set image:
+//                self.navigationController?.navigationBar.backIndicatorImage = #imageLiteral(resourceName: "wavedirection")
+//                self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = #imageLiteral(resourceName: "wavedirection")
             }
         }
     }
@@ -296,6 +304,4 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         // Dispose of any resources that can be recreated.
     }
     
-    
 }
-

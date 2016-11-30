@@ -46,14 +46,15 @@ class JsonLocationService {
                         location.supDifficulty = json[count]["SUPDifficulty"].int!
                         location.whiteWaterDifficulty = json[count]["WhiteWaterDifficulty"].int!
                         location.showLocation = json[count]["showLocation"].bool!
+                        location.bestWindDirection = json[count]["BestWindDirection"].string!
+                        location.bestWindSpeed = json[count]["BestWindSpeed"].double!
+                        location.bestWaveDirection = json[count]["BestWaveDirection"].string!
+                        location.bestWaveHeight = json[count]["BestWaveHeight"].double!
                         
                         
                         //TODO
                         // More properties from model.
                         
-                        //
-                        //                    print("\(location.locationId)")
-                        //                    print("\(location.locationName)")
                         self.locations.append(location)
                         
                         count = count + 1

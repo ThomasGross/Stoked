@@ -15,6 +15,7 @@ class WaveForecastCell: UITableViewCell {
     @IBOutlet weak var currentWaveDirection: UILabel!
     @IBOutlet weak var currentWaveDirectionIcon: UIImageView!
     @IBOutlet weak var currentWaveSpeed: UILabel!
+    @IBOutlet weak var currentWaveHeightView: UIView!
     
     // First day
     @IBOutlet weak var firstDayWaveHeight: UILabel!
@@ -22,6 +23,7 @@ class WaveForecastCell: UITableViewCell {
     @IBOutlet weak var firstDayWaveDirectIcon: UIImageView!
     @IBOutlet weak var firstDayWaveSpeed: UILabel!
     @IBOutlet weak var firstDayName: UILabel!
+    @IBOutlet weak var firstDayWaveHeightView: UIView!
     
     // Second day
     @IBOutlet weak var secondDayWaveHeight: UILabel!
@@ -29,6 +31,7 @@ class WaveForecastCell: UITableViewCell {
     @IBOutlet weak var secondDayWaveDirectIcon: UIImageView!
     @IBOutlet weak var secondDayWaveSpeed: UILabel!
     @IBOutlet weak var secondDayName: UILabel!
+    @IBOutlet weak var secondDayWaveHeightView: UIView!
     
     // Third day
     @IBOutlet weak var thirdDayWaveHeight: UILabel!
@@ -36,6 +39,7 @@ class WaveForecastCell: UITableViewCell {
     @IBOutlet weak var thirdDayWaveDirectIcon: UIImageView!
     @IBOutlet weak var thirdDayWaveSpeed: UILabel!
     @IBOutlet weak var thirdDayName: UILabel!
+    @IBOutlet weak var thirdDayWaveHeightView: UIView!
     
     // Fourth day
     @IBOutlet weak var fourthDayWaveHeight: UILabel!
@@ -43,6 +47,7 @@ class WaveForecastCell: UITableViewCell {
     @IBOutlet weak var fourthDayWaveDirectIcon: UIImageView!
     @IBOutlet weak var fourthDayWaveSpeed: UILabel!
     @IBOutlet weak var fourthDayName: UILabel!
+    @IBOutlet weak var fourthDayWaveHeightView: UIView!
     
     
     

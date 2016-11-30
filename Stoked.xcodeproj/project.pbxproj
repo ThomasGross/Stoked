@@ -31,6 +31,8 @@
 		0D1C52D81DE9BCCA00E2F9C4 /* WindForecastCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D1C52D61DE9BCCA00E2F9C4 /* WindForecastCell.xib */; };
 		0D1C52E31DEB770000E2F9C4 /* WaveForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C52E11DEB770000E2F9C4 /* WaveForecastCell.swift */; };
 		0D1C52E41DEB770000E2F9C4 /* WaveForecastCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D1C52E21DEB770000E2F9C4 /* WaveForecastCell.xib */; };
+		0D1C530D1DEDB94200E2F9C4 /* BestConditionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C530B1DEDB94200E2F9C4 /* BestConditionsCell.swift */; };
+		0D1C530E1DEDB94200E2F9C4 /* BestConditionsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D1C530C1DEDB94200E2F9C4 /* BestConditionsCell.xib */; };
 		0D5CED951DE461BE00FB533C /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5CED941DE461BE00FB533C /* UIViewExtensions.swift */; };
 		0D5CED971DE484EF00FB533C /* LocationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5CED961DE484EF00FB533C /* LocationDetailViewController.swift */; };
 		0D5CED9D1DE5E93200FB533C /* UIImageEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5CED9C1DE5E93200FB533C /* UIImageEffects.swift */; };
@@ -73,6 +75,8 @@
 		0D1C52D61DE9BCCA00E2F9C4 /* WindForecastCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WindForecastCell.xib; sourceTree = "<group>"; };
 		0D1C52E11DEB770000E2F9C4 /* WaveForecastCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveForecastCell.swift; sourceTree = "<group>"; };
 		0D1C52E21DEB770000E2F9C4 /* WaveForecastCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WaveForecastCell.xib; sourceTree = "<group>"; };
+		0D1C530B1DEDB94200E2F9C4 /* BestConditionsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BestConditionsCell.swift; sourceTree = "<group>"; };
+		0D1C530C1DEDB94200E2F9C4 /* BestConditionsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BestConditionsCell.xib; sourceTree = "<group>"; };
 		0D5CED941DE461BE00FB533C /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		0D5CED961DE484EF00FB533C /* LocationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDetailViewController.swift; sourceTree = "<group>"; };
 		0D5CED9C1DE5E93200FB533C /* UIImageEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageEffects.swift; sourceTree = "<group>"; };
@@ -122,6 +126,8 @@
 		0D1237191DD517E30036A89F /* Stoked */ = {
 			isa = PBXGroup;
 			children = (
+				0D1C530B1DEDB94200E2F9C4 /* BestConditionsCell.swift */,
+				0D1C530C1DEDB94200E2F9C4 /* BestConditionsCell.xib */,
 				0D1C52E11DEB770000E2F9C4 /* WaveForecastCell.swift */,
 				0D1C52E21DEB770000E2F9C4 /* WaveForecastCell.xib */,
 				0D1C52D51DE9BCCA00E2F9C4 /* WindForecastCell.swift */,
@@ -296,6 +302,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D1C530E1DEDB94200E2F9C4 /* BestConditionsCell.xib in Resources */,
 				0D1C52D81DE9BCCA00E2F9C4 /* WindForecastCell.xib in Resources */,
 				0D5CEE421DE725C400A5083C /* DetailDecriptionCell.xib in Resources */,
 				0D1237281DD517E30036A89F /* LaunchScreen.storyboard in Resources */,
@@ -367,6 +374,7 @@
 				0D7A13DC1DDB48A3003AAE4B /* LocationModel.swift in Sources */,
 				0D8AB83B1DE870C80073B0AB /* DateExtension.swift in Sources */,
 				0D1237391DD53BA30036A89F /* EventViewController.swift in Sources */,
+				0D1C530D1DEDB94200E2F9C4 /* BestConditionsCell.swift in Sources */,
 				0D5CED9D1DE5E93200FB533C /* UIImageEffects.swift in Sources */,
 				0D0AC3A51DE30BE2008216A6 /* CustomAnnotationViewModel.swift in Sources */,
 				0D0AC39D1DE2F407008216A6 /* CustomCalloutView.swift in Sources */,

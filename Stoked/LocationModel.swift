@@ -32,22 +32,23 @@ class LocationModel {
     var surfDifficulty: Int = 0
     var supDifficulty: Int = 0
     var whiteWaterDifficulty: Int = 0
+    //Best conditions
+    var bestWindSpeed: Double = 0.0
+    var bestWindDirection: String = ""
+    var bestWaveHeight: Double = 0.0
+    var bestWaveDirection: String = ""
     
     // TODO:
     
     //Imagedata
 //    var ImgData ImageData { get; set; }
-    //Best surf conditions
-//    public double BestWindSpeed { get; set; }
-//    public string BestWindDirection { get; set; }
-//    public double BestWaveHeight { get; set; }
-//    public string BestWaveDirection { get; set; }
+    
     //Created by
 //    public string AspUserId { get; set; }
 //    public string FullName { get; set; }
     
     
-    init(locationId: Int, locationName: String, locationLat: Double, locationLong: Double, locationDescription: String, isSurfLocation: Bool, isSUPLocation: Bool, isWhiteWaterLocation: Bool, showLocation: Bool, creationDate: String, surfDifficulty: Int, supDifficulty: Int, whiteWaterDifficulty: Int) {
+    init(locationId: Int, locationName: String, locationLat: Double, locationLong: Double, locationDescription: String, isSurfLocation: Bool, isSUPLocation: Bool, isWhiteWaterLocation: Bool, showLocation: Bool, creationDate: String, surfDifficulty: Int, supDifficulty: Int, whiteWaterDifficulty: Int, bestWindSpeed: Double, bestWindDirection: String, bestWaveHeight: Double, bestWaveDirection: String) {
         self.locationId = locationId
         self.locationName = locationName
         self.locationLat = locationLat
@@ -61,6 +62,10 @@ class LocationModel {
         self.surfDifficulty = surfDifficulty
         self.supDifficulty = supDifficulty
         self.whiteWaterDifficulty = whiteWaterDifficulty
+        self.bestWindSpeed = bestWindSpeed
+        self.bestWindDirection = bestWindDirection
+        self.bestWaveHeight = bestWaveHeight
+        self.bestWaveDirection = bestWaveDirection
         
     }
     

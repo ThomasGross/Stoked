@@ -12,6 +12,14 @@ class DetailDecriptionCell: UITableViewCell {
 
     @IBOutlet weak var descriptionTextView: UITextView!
 
+    @IBOutlet weak var surfDiffName: UILabel!
+    @IBOutlet weak var surfDiffValue: UILabel!
+    
+    @IBOutlet weak var supDiffName: UILabel!
+    @IBOutlet weak var supDiffValue: UILabel!
+    
+    @IBOutlet weak var wwDiffName: UILabel!
+    @IBOutlet weak var wwDiffValue: UILabel!
     
     
     override func awakeFromNib() {

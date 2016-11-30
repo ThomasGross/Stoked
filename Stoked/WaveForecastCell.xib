@@ -75,7 +75,7 @@
                                 <color key="backgroundColor" red="0.78039215689999997" green="0.78039215689999997" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1m3-eo-Hem">
-                                <rect key="frame" x="91" y="280" width="51" height="21"/>
+                                <rect key="frame" x="90" y="280" width="51" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                 <nil key="textColor"/>
@@ -93,19 +93,19 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="aI4-EQ-G77">
-                                <rect key="frame" x="107" y="263" width="20" height="20"/>
+                                <rect key="frame" x="106" y="263" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.69019607839999997" green="0.81176470590000005" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sif-hX-US4">
-                                <rect key="frame" x="156" y="280" width="51" height="21"/>
+                                <rect key="frame" x="155" y="280" width="51" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="A4C-Qz-3Mk">
-                                <rect key="frame" x="172" y="263" width="20" height="20"/>
+                                <rect key="frame" x="171" y="263" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.69019607839999997" green="0.81176470590000005" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
@@ -134,14 +134,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k4i-GW-rRS">
-                                <rect key="frame" x="91" y="247" width="51" height="21"/>
+                                <rect key="frame" x="90" y="247" width="51" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4eI-bJ-1Pp">
-                                <rect key="frame" x="156" y="247" width="51" height="21"/>
+                                <rect key="frame" x="155" y="247" width="51" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <nil key="textColor"/>
@@ -155,7 +155,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lc8-2L-6d4">
-                                <rect key="frame" x="286" y="247" width="51" height="21"/>
+                                <rect key="frame" x="287" y="247" width="51" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <nil key="textColor"/>
@@ -196,6 +196,56 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rec-Lo-cnG">
+                                <rect key="frame" x="37" y="84" width="28" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.69019607839999997" green="0.81176470590000005" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LHN-AV-Dt0">
+                                <rect key="frame" x="102" y="83" width="28" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.69019607839999997" green="0.81176470590000005" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1az-iE-B7R">
+                                <rect key="frame" x="167" y="83" width="28" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.69019607839999997" green="0.81176470590000005" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z6S-AH-515">
+                                <rect key="frame" x="232" y="83" width="28" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.69019607839999997" green="0.81176470590000005" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IcS-bS-HVr">
+                                <rect key="frame" x="297" y="83" width="28" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.69019607839999997" green="0.81176470590000005" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <userDefinedRuntimeAttributes>
@@ -236,26 +286,31 @@
                 <outlet property="currentWaveDirection" destination="2SS-Pk-ycq" id="lx2-7I-49b"/>
                 <outlet property="currentWaveDirectionIcon" destination="bpE-2l-eGV" id="OTB-16-7ix"/>
                 <outlet property="currentWaveHeight" destination="tEv-W3-8WT" id="wIa-Jn-BKk"/>
+                <outlet property="currentWaveHeightView" destination="rec-Lo-cnG" id="b4S-S9-eOv"/>
                 <outlet property="currentWaveSpeed" destination="9NB-BI-5sH" id="hM9-kb-58M"/>
                 <outlet property="firstDayName" destination="XVa-tf-FLq" id="G0s-bH-duA"/>
                 <outlet property="firstDayWaveDirectIcon" destination="aI4-EQ-G77" id="fHh-Bw-sFC"/>
                 <outlet property="firstDayWaveDirection" destination="k4i-GW-rRS" id="WRb-BK-SHC"/>
                 <outlet property="firstDayWaveHeight" destination="wUz-jg-Z84" id="9v3-w1-liU"/>
+                <outlet property="firstDayWaveHeightView" destination="LHN-AV-Dt0" id="7AH-P5-ODd"/>
                 <outlet property="firstDayWaveSpeed" destination="1m3-eo-Hem" id="ASK-8x-GgQ"/>
                 <outlet property="fourthDayName" destination="KHu-b3-9cl" id="zHz-cy-2oJ"/>
                 <outlet property="fourthDayWaveDirect" destination="Lc8-2L-6d4" id="OTK-z2-rod"/>
                 <outlet property="fourthDayWaveDirectIcon" destination="IyK-ho-AJL" id="Sbt-nU-0eC"/>
                 <outlet property="fourthDayWaveHeight" destination="k5m-5I-Lej" id="sg5-g5-21m"/>
+                <outlet property="fourthDayWaveHeightView" destination="IcS-bS-HVr" id="4rt-sf-tR1"/>
                 <outlet property="fourthDayWaveSpeed" destination="kMN-nC-gGE" id="Pig-dR-Z7w"/>
                 <outlet property="secondDayName" destination="gGc-xh-GcR" id="fOJ-4Q-gg5"/>
                 <outlet property="secondDayWaveDirect" destination="4eI-bJ-1Pp" id="0pd-fh-MTa"/>
                 <outlet property="secondDayWaveDirectIcon" destination="A4C-Qz-3Mk" id="3n2-2D-EpB"/>
                 <outlet property="secondDayWaveHeight" destination="cCz-dx-0ax" id="zos-yX-B0K"/>
+                <outlet property="secondDayWaveHeightView" destination="1az-iE-B7R" id="vMe-3S-yB5"/>
                 <outlet property="secondDayWaveSpeed" destination="Sif-hX-US4" id="oYA-0E-CKm"/>
                 <outlet property="thirdDayName" destination="G4j-gT-WM2" id="fgm-Di-F8r"/>
                 <outlet property="thirdDayWaveDirect" destination="jd5-G6-e2F" id="HPU-39-OIt"/>
                 <outlet property="thirdDayWaveDirectIcon" destination="Drm-Pa-IoQ" id="8nh-Lw-nKI"/>
                 <outlet property="thirdDayWaveHeight" destination="oYv-1G-bSH" id="zY7-d6-fus"/>
+                <outlet property="thirdDayWaveHeightView" destination="z6S-AH-515" id="0Z7-Va-dUy"/>
                 <outlet property="thirdDayWaveSpeed" destination="hpW-f3-Wyt" id="x8a-V4-iYs"/>
             </connections>
             <point key="canvasLocation" x="39" y="30.5"/>

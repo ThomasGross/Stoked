@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -36,9 +37,13 @@
         <scene sceneID="fJa-bZ-OL1">
             <objects>
                 <navigationController id="Vt5-O4-BsZ" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="14d-eM-Jhq">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="14d-eM-Jhq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.69019607839999997" green="0.81176470590000005" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="exS-cu-dFS" kind="relationship" relationship="rootViewController" id="IPz-uC-5M1"/>
@@ -70,14 +75,15 @@
                                     <action selector="calloutbuttonAction:" destination="exS-cu-dFS" eventType="touchUpInside" id="NYS-xi-GfM"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="QuE-5X-SzX">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="QuE-5X-SzX">
                                 <rect key="frame" x="339" y="72" width="20" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="QuE-5X-SzX" firstAttribute="trailing" secondItem="LTB-LT-JAV" secondAttribute="trailingMargin" id="BL4-Xf-UD2"/>
                             <constraint firstItem="opN-Iv-SCg" firstAttribute="top" secondItem="oId-77-7dm" secondAttribute="bottom" id="FXH-a5-wFb"/>
+                            <constraint firstItem="QuE-5X-SzX" firstAttribute="top" secondItem="qso-P3-axc" secondAttribute="bottom" constant="8" id="Jjx-xj-kfd"/>
                             <constraint firstAttribute="trailing" secondItem="oId-77-7dm" secondAttribute="trailing" id="YyG-hy-5d6"/>
                             <constraint firstItem="oId-77-7dm" firstAttribute="top" secondItem="qso-P3-axc" secondAttribute="bottom" id="bfO-6C-5C6"/>
                             <constraint firstItem="oId-77-7dm" firstAttribute="leading" secondItem="LTB-LT-JAV" secondAttribute="leading" id="kvR-sy-92c"/>
@@ -112,21 +118,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Surf4.Foto-Gjerluff-Photography-1030x686-2" translatesAutoresizingMaskIntoConstraints="NO" id="YyL-bS-a5X">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Surf4.Foto-Gjerluff-Photography-1030x686-2" translatesAutoresizingMaskIntoConstraints="NO" id="YyL-bS-a5X">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="STOKED_LOGO_WHITE_RGB" translatesAutoresizingMaskIntoConstraints="NO" id="ANF-Q7-MTe">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="STOKED_LOGO_WHITE_RGB" translatesAutoresizingMaskIntoConstraints="NO" id="ANF-Q7-MTe">
                                 <rect key="frame" x="16" y="79" width="103" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="103" id="Fzt-Fm-sJM"/>
+                                    <constraint firstAttribute="height" constant="30" id="KCX-T1-UyR"/>
+                                </constraints>
                             </imageView>
-                            <tableView contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xoK-tW-TmP">
+                            <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xoK-tW-TmP">
                                 <rect key="frame" x="7" y="64" width="362" height="603"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xoK-tW-TmP" firstAttribute="leading" secondItem="VGe-0s-akl" secondAttribute="leading" constant="7" id="0G4-2Y-ft9"/>
+                            <constraint firstItem="YyL-bS-a5X" firstAttribute="top" secondItem="731-OP-8Ns" secondAttribute="bottom" id="185-gR-kE2"/>
+                            <constraint firstItem="ysw-MB-5pe" firstAttribute="top" secondItem="xoK-tW-TmP" secondAttribute="bottom" id="7EV-eN-zx8"/>
+                            <constraint firstItem="ANF-Q7-MTe" firstAttribute="top" secondItem="731-OP-8Ns" secondAttribute="bottom" constant="15" id="Avi-KQ-xJy"/>
+                            <constraint firstAttribute="trailing" secondItem="YyL-bS-a5X" secondAttribute="trailing" id="Ley-BP-AFD"/>
+                            <constraint firstItem="YyL-bS-a5X" firstAttribute="leading" secondItem="VGe-0s-akl" secondAttribute="leading" id="NkD-kt-DdR"/>
+                            <constraint firstItem="xoK-tW-TmP" firstAttribute="top" secondItem="731-OP-8Ns" secondAttribute="bottom" id="hy8-W7-B91"/>
+                            <constraint firstAttribute="trailing" secondItem="xoK-tW-TmP" secondAttribute="trailing" constant="6" id="jo8-M8-tLV"/>
+                            <constraint firstItem="ANF-Q7-MTe" firstAttribute="leading" secondItem="VGe-0s-akl" secondAttribute="leadingMargin" id="lvq-13-pKi"/>
+                            <constraint firstItem="ysw-MB-5pe" firstAttribute="top" secondItem="YyL-bS-a5X" secondAttribute="bottom" id="zHJ-9d-lXE"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Location" id="wtp-bG-PNT"/>
                     <connections>
