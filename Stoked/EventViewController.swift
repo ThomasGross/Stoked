@@ -15,7 +15,6 @@ class EventViewController: UIViewController, UIWebViewDelegate {
     @IBOutlet weak var SideMenuButton: UIBarButtonItem!
 
     @IBOutlet var webView: UIWebView!
-    var jsonLocationService = JsonLocationService()
     
     var locations: [LocationModel]?
     
@@ -27,11 +26,6 @@ class EventViewController: UIViewController, UIWebViewDelegate {
         SideMenuButton.action = #selector(SWRevealViewController.revealToggle(_:))
         
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-        
-        
-
-        
-        
         
         // Do any additional setup after loading the view.
     }

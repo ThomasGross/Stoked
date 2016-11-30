@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class CustomCalloutView: UIView {
 
@@ -31,6 +32,7 @@ class CustomCalloutView: UIView {
     @IBOutlet weak var infoButton: UIButton!
     
     
+    
     func setup() {
         super.layer.borderWidth = 0.3
         super.layer.borderColor = UIColor(red:0.22, green:0.22, blue:0.22, alpha:0.7).cgColor
@@ -49,7 +51,6 @@ class CustomCalloutView: UIView {
         self.setup()
     }
     
-    
     override func draw(_ rect: CGRect) {
         
         let aPath = UIBezierPath()
@@ -61,6 +62,51 @@ class CustomCalloutView: UIView {
         aPath.close()
         strokeColor.setStroke()
         aPath.stroke()
+    
+    }
+    
+    func getlocationDetails(location: LocationModel, json: JSON) {
+        
+        locationName.text = location.locationName
+        
+        locationCurrentConditions.text = location.locationDescription
+        
+        locationCategories.text = ""
+        if (location.isSurfLocation == true){
+            locationCategories.text?.append("SURF")
+        }
+        if (location.isSUPLocation == true){
+            if locationCategories.text != "" {
+                locationCategories.text?.append(" · ")
+            }
+            locationCategories.text?.append("SUP")
+        }
+        if (location.isWhiteWaterLocation == true){
+            if locationCategories.text != "" {
+                locationCategories.text?.append(" · ")
+            }
+            locationCategories.text?.append("WHITE WATER")
+        }
+        
+        var tempString: String = ""
+        tempString = json["data"]["weather"][0]["hourly"][0]["weatherDesc"][0]["value"].stringValue
+        locationCurrentConditions.text = tempString.uppercased()
+        tempString = json["data"]["weather"][0]["hourly"][0]["tempC"].stringValue
+        tempString.append("°")
+        locationTempAir.text = tempString
+        tempString = json["data"]["weather"][0]["hourly"][0]["windspeedKmph"].stringValue
+        tempString.append("Kmph")
+        locationWindSpeed.text = tempString
+        tempString = json["data"]["weather"][0]["hourly"][0]["winddir16Point"].stringValue
+        locationWindDirection.text = tempString
+        tempString = json["data"]["weather"][0]["hourly"][0]["swellHeight_m"].stringValue
+        tempString.append("m")
+        locationWaveHight.text = tempString
+        tempString = json["data"]["weather"][0]["hourly"][0]["swellDir16Point"].stringValue
+        locationWaveDirection.text = tempString
+        tempString = json["data"]["weather"][0]["hourly"][0]["waterTemp_C"].stringValue
+        tempString.append("°")
+        locationTempWater.text = tempString
         
         
     }

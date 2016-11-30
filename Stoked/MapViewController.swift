@@ -52,18 +52,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         
-        DispatchQueue.main.async {
-            self.jsonLocationService.getLocations() { responceLocation in
-                self.locations = responceLocation
-                print(responceLocation[0].bestWindDirection)
-                // todo
-                // add annotation placer method here
-                self.addAnnotations()
-                
-                self.locationActivityIndicator.stopAnimating()
-                self.locationActivityIndicator.isHidden = true
-            }
-        }
+        addAnnotations()
         
         
         // sets the delegate to be self
@@ -116,25 +105,30 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     func addAnnotations() {
         
-        // loops though the list of mapitems in the response
-        for location in locations {
-            if location.showLocation == true{
-                // data testing
-                print("Name = \(location.locationName)")
-                print(location.creationDate)
-                print(location.locationDescription)
-                print(location.showLocation)
+        DispatchQueue.main.async {
+            self.jsonLocationService.getLocations() { responceLocation in
+                self.locations = responceLocation
                 
                 
-                let customAnnotation = CustomAnnotationModel()
+                // loops though the list of mapitems in the response
+                for location in self.locations {
+                    if location.showLocation == true{
+                        
+                        let customAnnotation = CustomAnnotationModel()
+                        
+                        let locationCordinate = CLLocationCoordinate2D(latitude: location.locationLat, longitude: location.locationLong)
+                        customAnnotation.locationId = location.locationId
+                        customAnnotation.coordinate = locationCordinate // assign cordinate to the annotation
+                        
+                        self.MapView.addAnnotation(customAnnotation) // add the annotation to the map
+                    }
+                }
                 
-                let locationCordinate = CLLocationCoordinate2D(latitude: location.locationLat, longitude: location.locationLong)
-                customAnnotation.locationId = location.locationId
-                customAnnotation.coordinate = locationCordinate // assign cordinate to the annotation
-                
-                self.MapView.addAnnotation(customAnnotation) // add the annotation to the map
+                self.locationActivityIndicator.stopAnimating()
+                self.locationActivityIndicator.isHidden = true
             }
         }
+        
     }
     
     //MARK: MKMapViewDelegate
@@ -151,7 +145,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             annotationView = CustomAnnotationViewModel(annotation: annotation, reuseIdentifier: "Pin")
             annotationView?.canShowCallout = false
             
-            
         }else{
             annotationView?.annotation = annotation
         }
@@ -159,6 +152,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         return annotationView
     }
     
+    
+        // Drop pin animation
 //    func mapView(_ mapView: MKMapView, didAdd views: [MKAnnotationView]) {
 //        let visibleRect = mapView.annotationVisibleRect
 //        
@@ -191,71 +186,40 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         // 2
         let customAnnotation = view.annotation as! CustomAnnotationModel
         
-        let views = Bundle.main.loadNibNamed("CustomCalloutView", owner: nil, options: nil)
-        let calloutView = views?[0] as! CustomCalloutView
-        
+        locationActivityIndicator.startAnimating()
+        locationActivityIndicator.isHidden = false
+
         for location in locations {
             if location.locationId == customAnnotation.locationId  {
                 
                 tempLocation = location
                 
-                calloutView.locationName.text = location.locationName
-                
-                calloutView.locationCategories.text = ""
-                if (location.isSurfLocation == true){
-                    calloutView.locationCategories.text?.append("SURF")
-                }
-                if (location.isSUPLocation == true){
-                    if calloutView.locationCategories.text != "" {
-                        calloutView.locationCategories.text?.append(" · ")
-                    }
-                    calloutView.locationCategories.text?.append("SUP")
-                }
-                if (location.isWhiteWaterLocation == true){
-                    if calloutView.locationCategories.text != "" {
-                        calloutView.locationCategories.text?.append(" · ")
-                    }
-                    calloutView.locationCategories.text?.append("WHITE WATER")
-                }
-                
-                calloutView.locationCurrentConditions.text = location.locationDescription
-                
                 DispatchQueue.main.async {
                     self.jsonWeatherService.getWeatherForLocation(id: location.locationId) { responceLocation in
                         
-                        var tempString: String = ""
-                        tempString = responceLocation["data"]["weather"][0]["hourly"][0]["weatherDesc"][0]["value"].stringValue
-                        calloutView.locationCurrentConditions.text = tempString.uppercased()
-                        tempString = responceLocation["data"]["weather"][0]["hourly"][0]["tempC"].stringValue
-                        tempString.append("°")
-                        calloutView.locationTempAir.text = tempString
-                        tempString = responceLocation["data"]["weather"][0]["hourly"][0]["windspeedKmph"].stringValue
-                        tempString.append("Kmph")
-                        calloutView.locationWindSpeed.text = tempString
-                        tempString = responceLocation["data"]["weather"][0]["hourly"][0]["winddir16Point"].stringValue
-                        calloutView.locationWindDirection.text = tempString
-                        tempString = responceLocation["data"]["weather"][0]["hourly"][0]["swellHeight_m"].stringValue
-                        tempString.append("m")
-                        calloutView.locationWaveHight.text = tempString
-                        tempString = responceLocation["data"]["weather"][0]["hourly"][0]["swellDir16Point"].stringValue
-                        calloutView.locationWaveDirection.text = tempString
-                        tempString = responceLocation["data"]["weather"][0]["hourly"][0]["waterTemp_C"].stringValue
-                        tempString.append("°")
-                        calloutView.locationTempWater.text = tempString
+                        self.locationActivityIndicator.stopAnimating()
+                        self.locationActivityIndicator.isHidden = true
+                        
+                        let views = Bundle.main.loadNibNamed("CustomCalloutView", owner: nil, options: nil)
+                        let calloutView = views?[0] as! CustomCalloutView
+                        
+                        
+                        calloutView.getlocationDetails(location: location, json: responceLocation)
                         
                         self.tempCalloutLocation = responceLocation
+                        
+                        
+                        self.calloutButton.isHidden = false
+                        
+                        calloutView.center = CGPoint(x: view.bounds.size.width / 2, y: -calloutView.bounds.size.height*0.52)
+                        
+                        view.addSubview(calloutView)
+                        mapView.setCenter((view.annotation?.coordinate)!, animated: true)
                         
                     }
                 }
             }
         }
-        
-        self.calloutButton.isHidden = false
-        
-        calloutView.center = CGPoint(x: view.bounds.size.width / 2, y: -calloutView.bounds.size.height*0.52)
-
-        view.addSubview(calloutView)
-        mapView.setCenter((view.annotation?.coordinate)!, animated: true)
  
     }
     

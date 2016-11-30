@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import SwiftyJSON
 
-class DetailDecriptionCell: UITableViewCell {
+class DetailDecriptionCell: UITableViewCell, LocationCellProtocol {
 
     @IBOutlet weak var descriptionTextView: UITextView!
 
@@ -31,6 +32,34 @@ class DetailDecriptionCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func populateCell(json: JSON, location: LocationModel) {
+        
+        descriptionTextView.text = location.locationDescription
+        
+        if location.isSurfLocation {
+            surfDiffValue.text = CellDataHelper.getDifficultyLevel(level: location.surfDifficulty)
+        } else {
+            surfDiffValue.text = "N/A"
+            surfDiffValue.textColor = UIColor(red:0.78, green:0.78, blue:0.78, alpha:1.0)
+            surfDiffName.textColor = UIColor(red:0.78, green:0.78, blue:0.78, alpha:1.0)
+        }
+        if location.isSUPLocation {
+            supDiffValue.text = CellDataHelper.getDifficultyLevel(level: location.supDifficulty)
+        } else {
+            supDiffValue.text = "N/A"
+            supDiffValue.textColor = UIColor(red:0.78, green:0.78, blue:0.78, alpha:1.0)
+            supDiffName.textColor = UIColor(red:0.78, green:0.78, blue:0.78, alpha:1.0)
+        }
+        if location.isWhiteWaterLocation {
+            wwDiffValue.text = CellDataHelper.getDifficultyLevel(level: location.whiteWaterDifficulty)
+        } else {
+            wwDiffValue.text = "N/A"
+            wwDiffValue.textColor = UIColor(red:0.78, green:0.78, blue:0.78, alpha:1.0)
+            wwDiffName.textColor = UIColor(red:0.78, green:0.78, blue:0.78, alpha:1.0)
+        }
+        
     }
     
 }

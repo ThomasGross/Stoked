@@ -13,9 +13,6 @@ import MapKit
 class CustomAnnotationModel: MKPointAnnotation {
     
     var locationId: Int!
-    var locationName: String!
-    var locationCategories: String!
-    var locationCurrentConditions: String!
 
     
     override init() {

@@ -33,6 +33,8 @@
 		0D1C52E41DEB770000E2F9C4 /* WaveForecastCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D1C52E21DEB770000E2F9C4 /* WaveForecastCell.xib */; };
 		0D1C530D1DEDB94200E2F9C4 /* BestConditionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C530B1DEDB94200E2F9C4 /* BestConditionsCell.swift */; };
 		0D1C530E1DEDB94200E2F9C4 /* BestConditionsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D1C530C1DEDB94200E2F9C4 /* BestConditionsCell.xib */; };
+		0D434E531DEF32EC009A0E4B /* LocationCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D434E521DEF32EC009A0E4B /* LocationCellProtocol.swift */; };
+		0D434E561DEF776C009A0E4B /* CellDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D434E551DEF776C009A0E4B /* CellDataHelper.swift */; };
 		0D5CED951DE461BE00FB533C /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5CED941DE461BE00FB533C /* UIViewExtensions.swift */; };
 		0D5CED971DE484EF00FB533C /* LocationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5CED961DE484EF00FB533C /* LocationDetailViewController.swift */; };
 		0D5CED9D1DE5E93200FB533C /* UIImageEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5CED9C1DE5E93200FB533C /* UIImageEffects.swift */; };
@@ -77,6 +79,8 @@
 		0D1C52E21DEB770000E2F9C4 /* WaveForecastCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WaveForecastCell.xib; sourceTree = "<group>"; };
 		0D1C530B1DEDB94200E2F9C4 /* BestConditionsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BestConditionsCell.swift; sourceTree = "<group>"; };
 		0D1C530C1DEDB94200E2F9C4 /* BestConditionsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BestConditionsCell.xib; sourceTree = "<group>"; };
+		0D434E521DEF32EC009A0E4B /* LocationCellProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationCellProtocol.swift; sourceTree = "<group>"; };
+		0D434E551DEF776C009A0E4B /* CellDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellDataHelper.swift; sourceTree = "<group>"; };
 		0D5CED941DE461BE00FB533C /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		0D5CED961DE484EF00FB533C /* LocationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDetailViewController.swift; sourceTree = "<group>"; };
 		0D5CED9C1DE5E93200FB533C /* UIImageEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageEffects.swift; sourceTree = "<group>"; };
@@ -126,22 +130,9 @@
 		0D1237191DD517E30036A89F /* Stoked */ = {
 			isa = PBXGroup;
 			children = (
-				0D1C530B1DEDB94200E2F9C4 /* BestConditionsCell.swift */,
-				0D1C530C1DEDB94200E2F9C4 /* BestConditionsCell.xib */,
-				0D1C52E11DEB770000E2F9C4 /* WaveForecastCell.swift */,
-				0D1C52E21DEB770000E2F9C4 /* WaveForecastCell.xib */,
-				0D1C52D51DE9BCCA00E2F9C4 /* WindForecastCell.swift */,
-				0D1C52D61DE9BCCA00E2F9C4 /* WindForecastCell.xib */,
-				0D5CEE431DE757F800A5083C /* WeatherForecastCell.swift */,
-				0D5CEE441DE757F800A5083C /* WeatherForecastCell.xib */,
-				0D5CEE3F1DE725C400A5083C /* DetailDecriptionCell.swift */,
-				0D5CEE401DE725C400A5083C /* DetailDecriptionCell.xib */,
-				0D0AC39C1DE2F407008216A6 /* CustomCalloutView.swift */,
-				0D0AC3A21DE2F6F1008216A6 /* CustomCalloutView.xib */,
-				0D0AC3921DDE38F0008216A6 /* SlideMenuTopCell.swift */,
-				0D0AC3931DDE38F0008216A6 /* SlideMenuTopCell.xib */,
-				0D0AC3961DDE45EE008216A6 /* SlideMenuItemCell.swift */,
-				0D0AC3971DDE45EE008216A6 /* SlideMenuItemCell.xib */,
+				0D434E5A1DEF85CD009A0E4B /* XibFiles */,
+				0D434E511DEF30A6009A0E4B /* Protocols */,
+				0D434E541DEF7700009A0E4B /* Singletons */,
 				0D7A13DF1DDB5A96003AAE4B /* Services */,
 				0D7A13DD1DDB48B2003AAE4B /* Models */,
 				0D7A13DE1DDB48C6003AAE4B /* Controllers */,
@@ -173,6 +164,69 @@
 				E2E23F3DEB60981741C15847 /* Pods_Stoked.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0D434E511DEF30A6009A0E4B /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				0D434E521DEF32EC009A0E4B /* LocationCellProtocol.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		0D434E541DEF7700009A0E4B /* Singletons */ = {
+			isa = PBXGroup;
+			children = (
+				0D434E551DEF776C009A0E4B /* CellDataHelper.swift */,
+			);
+			name = Singletons;
+			sourceTree = "<group>";
+		};
+		0D434E571DEF83FB009A0E4B /* LocationDetailCells */ = {
+			isa = PBXGroup;
+			children = (
+				0D1C530B1DEDB94200E2F9C4 /* BestConditionsCell.swift */,
+				0D1C530C1DEDB94200E2F9C4 /* BestConditionsCell.xib */,
+				0D1C52E11DEB770000E2F9C4 /* WaveForecastCell.swift */,
+				0D1C52E21DEB770000E2F9C4 /* WaveForecastCell.xib */,
+				0D1C52D51DE9BCCA00E2F9C4 /* WindForecastCell.swift */,
+				0D1C52D61DE9BCCA00E2F9C4 /* WindForecastCell.xib */,
+				0D5CEE431DE757F800A5083C /* WeatherForecastCell.swift */,
+				0D5CEE441DE757F800A5083C /* WeatherForecastCell.xib */,
+				0D5CEE3F1DE725C400A5083C /* DetailDecriptionCell.swift */,
+				0D5CEE401DE725C400A5083C /* DetailDecriptionCell.xib */,
+			);
+			name = LocationDetailCells;
+			sourceTree = "<group>";
+		};
+		0D434E581DEF8470009A0E4B /* SlideMenuCell */ = {
+			isa = PBXGroup;
+			children = (
+				0D0AC3921DDE38F0008216A6 /* SlideMenuTopCell.swift */,
+				0D0AC3931DDE38F0008216A6 /* SlideMenuTopCell.xib */,
+				0D0AC3961DDE45EE008216A6 /* SlideMenuItemCell.swift */,
+				0D0AC3971DDE45EE008216A6 /* SlideMenuItemCell.xib */,
+			);
+			name = SlideMenuCell;
+			sourceTree = "<group>";
+		};
+		0D434E591DEF8504009A0E4B /* CustomCallout */ = {
+			isa = PBXGroup;
+			children = (
+				0D0AC39C1DE2F407008216A6 /* CustomCalloutView.swift */,
+				0D0AC3A21DE2F6F1008216A6 /* CustomCalloutView.xib */,
+			);
+			name = CustomCallout;
+			sourceTree = "<group>";
+		};
+		0D434E5A1DEF85CD009A0E4B /* XibFiles */ = {
+			isa = PBXGroup;
+			children = (
+				0D434E591DEF8504009A0E4B /* CustomCallout */,
+				0D434E581DEF8470009A0E4B /* SlideMenuCell */,
+				0D434E571DEF83FB009A0E4B /* LocationDetailCells */,
+			);
+			name = XibFiles;
 			sourceTree = "<group>";
 		};
 		0D5CED931DE4615300FB533C /* Extensions */ = {
@@ -380,6 +434,7 @@
 				0D0AC39D1DE2F407008216A6 /* CustomCalloutView.swift in Sources */,
 				0D5CED971DE484EF00FB533C /* LocationDetailViewController.swift in Sources */,
 				0D133FE01DDC80D70005D07E /* JsonWeatherService.swift in Sources */,
+				0D434E531DEF32EC009A0E4B /* LocationCellProtocol.swift in Sources */,
 				0D5CEE451DE757F800A5083C /* WeatherForecastCell.swift in Sources */,
 				0D1237371DD523AA0036A89F /* SlideMenuTableViewController.swift in Sources */,
 				0D5CEE411DE725C400A5083C /* DetailDecriptionCell.swift in Sources */,
@@ -393,6 +448,7 @@
 				0D0AC3981DDE45EE008216A6 /* SlideMenuItemCell.swift in Sources */,
 				0D12371B1DD517E30036A89F /* AppDelegate.swift in Sources */,
 				0D1237331DD51FC40036A89F /* SWRevealViewController.m in Sources */,
+				0D434E561DEF776C009A0E4B /* CellDataHelper.swift in Sources */,
 				0D0AC3941DDE38F0008216A6 /* SlideMenuTopCell.swift in Sources */,
 				0D7A13E11DDB5DA0003AAE4B /* JsonLocationService.swift in Sources */,
 			);

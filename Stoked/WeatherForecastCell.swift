@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import SwiftyJSON
 
-class WeatherForecastCell: UITableViewCell {
+class WeatherForecastCell: UITableViewCell, LocationCellProtocol {
 
     
     // currentday
@@ -55,6 +56,74 @@ class WeatherForecastCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func populateCell(json: JSON, location: LocationModel) {
+        
+        var tempWeekDayName: String = ""
+        
+        // Current weather
+        var txt: String = ""
+        var tempIntMin: Double = 0.0
+        var tempIntMax: Double = 0.0
+        var result: Double = 0.0
+        
+        tempIntMin = json["data"]["weather"][0]["mintempC"].doubleValue
+        tempIntMax = json["data"]["weather"][0]["maxtempC"].doubleValue
+        
+        print(tempIntMin)
+        print(tempIntMax)
+        
+        result = Double((tempIntMin + tempIntMax) / 2)
+        currentWeatherLabel.text = "\(result)°"
+        txt = json["data"]["weather"][0]["hourly"][0]["precipMM"].stringValue
+        precipitation.text = txt.appending("% PRECIPITATION")
+        txt = json["data"]["weather"][0]["hourly"][0]["weatherDesc"][0]["value"].stringValue
+        weatherDecription.text = txt.uppercased()
+        
+        var tempMin: String = ""
+        var tempMax: String = ""
+        
+        // First day weather
+        tempMin = json["data"]["weather"][1]["mintempC"].stringValue
+        tempMax = json["data"]["weather"][1]["maxtempC"].stringValue
+        firstDayTemp.text = "\(tempMin)-\(tempMax)°"
+        
+        tempWeekDayName = json["data"]["weather"][1]["date"].stringValue
+        firstWeekdayName.text = Date().getDayOfWeek(today: tempWeekDayName)
+        
+        // Second day weather
+        tempMin = json["data"]["weather"][2]["mintempC"].stringValue
+        tempMax = json["data"]["weather"][2]["maxtempC"].stringValue
+        secondDayTemp.text = "\(tempMin)-\(tempMax)°"
+        
+        tempWeekDayName = json["data"]["weather"][2]["date"].stringValue
+        secondWeekdayName.text = Date().getDayOfWeek(today: tempWeekDayName)
+        
+        // Third day weather
+        tempMin = json["data"]["weather"][3]["mintempC"].stringValue
+        tempMax = json["data"]["weather"][3]["maxtempC"].stringValue
+        thirdDayTemp.text = "\(tempMin)-\(tempMax)°"
+        
+        tempWeekDayName = json["data"]["weather"][3]["date"].stringValue
+        thirdWeekdayName.text = Date().getDayOfWeek(today: tempWeekDayName)
+        
+        // Fourth day weather
+        tempMin = json["data"]["weather"][4]["mintempC"].stringValue
+        tempMax = json["data"]["weather"][4]["maxtempC"].stringValue
+        fourthDayTemp.text = "\(tempMin)-\(tempMax)°"
+        
+        tempWeekDayName = json["data"]["weather"][4]["date"].stringValue
+        fourthWeekdayName.text = Date().getDayOfWeek(today: tempWeekDayName)
+        
+        // Fifth day weather
+        tempMin = json["data"]["weather"][5]["mintempC"].stringValue
+        tempMax = json["data"]["weather"][5]["maxtempC"].stringValue
+        fifthDayTemp.text = "\(tempMin)-\(tempMax)°"
+        
+        tempWeekDayName = json["data"]["weather"][5]["date"].stringValue
+        fifthWeekdayName.text = Date().getDayOfWeek(today: tempWeekDayName)
+        
     }
     
 }
