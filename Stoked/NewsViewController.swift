@@ -13,9 +13,6 @@ class NewsViewController: UIViewController, UIWebViewDelegate {
 
     @IBOutlet weak var SideMenuButton: UIBarButtonItem!
     
-    
-    var jsonWeatherService = JsonWeatherService()
-    
     @IBOutlet var webView: UIWebView!
     
     override func viewDidLoad() {

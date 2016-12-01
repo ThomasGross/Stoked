@@ -148,7 +148,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         }else{
             annotationView?.annotation = annotation
         }
-        annotationView?.image = UIImage(named: "Location-Pin")
+        annotationView?.image = UIImage(named: "location30x30_GreenColor2")
         return annotationView
     }
     
@@ -253,11 +253,10 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                 vc.location = tempLocation
                 let backItem = UIBarButtonItem()
                 backItem.title = ""
+                self.navigationController?.navigationBar.tintColor = UIColor(red:0.22, green:0.22, blue:0.22, alpha:1.0)
                 
                 navigationItem.backBarButtonItem = backItem
                 // to set image:
-//                self.navigationController?.navigationBar.backIndicatorImage = #imageLiteral(resourceName: "wavedirection")
-//                self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = #imageLiteral(resourceName: "wavedirection")
             }
         }
     }

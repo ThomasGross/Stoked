@@ -35,6 +35,7 @@ class LocationDetailViewController: UIViewController, UITableViewDelegate, UITab
         super.viewDidLoad()
         
         locationDetailNavigationItem.title = location.locationName
+        self.navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Arial", size: 20)!]
         
         
         image = UIImage(named: "Surf4.Foto-Gjerluff-Photography-1030x686-2")
@@ -49,6 +50,8 @@ class LocationDetailViewController: UIViewController, UITableViewDelegate, UITab
                            detailCellData(cellId: 2, cellName: "waveforecast"),
                            detailCellData(cellId: 3, cellName: "windforecast"),
                            detailCellData(cellId: 4, cellName: "weatherforecast")]
+        
+        detailTableView.separatorStyle = .none
         
         print(json)
         

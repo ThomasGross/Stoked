@@ -37,7 +37,7 @@
                         <constraint firstAttribute="width" constant="38" id="wBu-pr-n93"/>
                     </constraints>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="winddirection" translatesAutoresizingMaskIntoConstraints="NO" id="4dx-lB-fuJ">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="winddir3" translatesAutoresizingMaskIntoConstraints="NO" id="4dx-lB-fuJ">
                     <rect key="frame" x="116" y="117" width="38" height="38"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="38" id="52Q-F4-76C"/>
@@ -202,7 +202,7 @@
         <image name="watertemp" width="128" height="128"/>
         <image name="wavedirection" width="128" height="128"/>
         <image name="waveheight" width="128" height="128"/>
-        <image name="winddirection" width="128" height="128"/>
+        <image name="winddir3" width="128" height="128"/>
         <image name="windspeed" width="128" height="128"/>
     </resources>
 </document>

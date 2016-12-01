@@ -72,14 +72,12 @@ class WaveForecastCell: UITableViewCell, LocationCellProtocol {
         var tempWaveDirect: String = ""
         var tempWaveSpeed: String = ""
         var tempWaveDirectionDegree: Double = 0.0
-        var tempWaveHeightOffset: Double = 0.0
         
         // Todays wave
         tempWaveHeight = json["data"]["weather"][0]["hourly"][0]["swellHeight_m"].stringValue
         currentWaveHeight.text = tempWaveHeight
-        currentWaveHeightView.frame.size.height = CGFloat(Float(CellDataHelper.getHeightForWaveView(height: tempWaveHeight)))
-        tempWaveHeightOffset = 100 - CellDataHelper.getHeightForWaveView(height: tempWaveHeight)
-        currentWaveHeightView.frame = currentWaveHeightView.frame.offsetBy( dx: 0, dy: CGFloat(tempWaveHeightOffset));
+        
+        NSLayoutConstraint.activate(getHeightContraints(height: tempWaveHeight, view: currentWaveHeightView))
         
         tempWaveDirect = json["data"]["weather"][0]["hourly"][0]["swellDir16Point"].stringValue
         currentWaveDirection.text = tempWaveDirect
@@ -95,9 +93,7 @@ class WaveForecastCell: UITableViewCell, LocationCellProtocol {
         // First day wave
         tempWaveHeight = json["data"]["weather"][1]["hourly"][0]["swellHeight_m"].stringValue
         firstDayWaveHeight.text = tempWaveHeight
-        firstDayWaveHeightView.frame.size.height = CGFloat(Float(CellDataHelper.getHeightForWaveView(height: tempWaveHeight)))
-        tempWaveHeightOffset = 100 - CellDataHelper.getHeightForWaveView(height: tempWaveHeight)
-        firstDayWaveHeightView.frame = firstDayWaveHeightView.frame.offsetBy( dx: 0, dy: CGFloat(tempWaveHeightOffset));
+        NSLayoutConstraint.activate(getHeightContraints(height: tempWaveHeight, view: firstDayWaveHeightView))
         tempWeekDayName = json["data"]["weather"][1]["date"].stringValue
         firstDayName.text = Date().getDayOfWeek(today: tempWeekDayName)
         tempWaveDirect = json["data"]["weather"][1]["hourly"][0]["swellDir16Point"].stringValue
@@ -115,9 +111,7 @@ class WaveForecastCell: UITableViewCell, LocationCellProtocol {
         // Second day wave
         tempWaveHeight = json["data"]["weather"][2]["hourly"][0]["swellHeight_m"].stringValue
         secondDayWaveHeight.text = tempWaveHeight
-        secondDayWaveHeightView.frame.size.height = CGFloat(Float(CellDataHelper.getHeightForWaveView(height: tempWaveHeight)))
-        tempWaveHeightOffset = 100 - CellDataHelper.getHeightForWaveView(height: tempWaveHeight)
-        secondDayWaveHeightView.frame = secondDayWaveHeightView.frame.offsetBy( dx: 0, dy: CGFloat(tempWaveHeightOffset));
+        NSLayoutConstraint.activate(getHeightContraints(height: tempWaveHeight, view: secondDayWaveHeightView))
         tempWeekDayName = json["data"]["weather"][2]["date"].stringValue
         secondDayName.text = Date().getDayOfWeek(today: tempWeekDayName)
         tempWaveDirect = json["data"]["weather"][2]["hourly"][0]["swellDir16Point"].stringValue
@@ -134,9 +128,7 @@ class WaveForecastCell: UITableViewCell, LocationCellProtocol {
         // Third day wave
         tempWaveHeight = json["data"]["weather"][3]["hourly"][0]["swellHeight_m"].stringValue
         thirdDayWaveHeight.text = tempWaveHeight
-        thirdDayWaveHeightView.frame.size.height = CGFloat(Float(CellDataHelper.getHeightForWaveView(height: tempWaveHeight)))
-        tempWaveHeightOffset = 100 - CellDataHelper.getHeightForWaveView(height: tempWaveHeight)
-        thirdDayWaveHeightView.frame = thirdDayWaveHeightView.frame.offsetBy( dx: 0, dy: CGFloat(tempWaveHeightOffset));
+        NSLayoutConstraint.activate(getHeightContraints(height: tempWaveHeight, view: thirdDayWaveHeightView))
         tempWeekDayName = json["data"]["weather"][3]["date"].stringValue
         thirdDayName.text = Date().getDayOfWeek(today: tempWeekDayName)
         tempWaveDirect = json["data"]["weather"][3]["hourly"][0]["swellDir16Point"].stringValue
@@ -154,9 +146,7 @@ class WaveForecastCell: UITableViewCell, LocationCellProtocol {
         // Fourth day wave
         tempWaveHeight = json["data"]["weather"][4]["hourly"][0]["swellHeight_m"].stringValue
         fourthDayWaveHeight.text = tempWaveHeight
-        fourthDayWaveHeightView.frame.size.height = CGFloat(Float(CellDataHelper.getHeightForWaveView(height: tempWaveHeight)))
-        tempWaveHeightOffset = 100 - CellDataHelper.getHeightForWaveView(height: tempWaveHeight)
-        fourthDayWaveHeightView.frame = fourthDayWaveHeightView.frame.offsetBy( dx: 0, dy: CGFloat(tempWaveHeightOffset));
+        NSLayoutConstraint.activate(getHeightContraints(height: tempWaveHeight, view: fourthDayWaveHeightView))
         tempWeekDayName = json["data"]["weather"][4]["date"].stringValue
         fourthDayName.text = Date().getDayOfWeek(today: tempWeekDayName)
         tempWaveDirect = json["data"]["weather"][4]["hourly"][0]["swellDir16Point"].stringValue
@@ -170,5 +160,20 @@ class WaveForecastCell: UITableViewCell, LocationCellProtocol {
         tempimageIcon = fourthDayWaveDirectIcon.image?.imageWithColor(color: UIColor(red:0.69, green:0.81, blue:0.86, alpha:1.0))
         fourthDayWaveDirectIcon.image = tempimageIcon
     }
+    
+    func getHeightContraints(height: String, view: UIView) -> [NSLayoutConstraint] {
+        let heightContraints = NSLayoutConstraint(item: view, attribute:
+            .height, relatedBy: .equal, toItem: nil,
+                     attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1.0,
+                     constant: CGFloat(CellDataHelper.getHeightForWaveView(height: height)))
+        
+        let widthContraints = NSLayoutConstraint(item: view, attribute:
+            .width, relatedBy: .equal, toItem: nil,
+                    attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1.0,
+                    constant: 42)
+        
+        return [heightContraints,widthContraints]
+    }
+    
     
 }

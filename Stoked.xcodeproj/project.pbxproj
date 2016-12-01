@@ -15,7 +15,6 @@
 		0D0AC39D1DE2F407008216A6 /* CustomCalloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0AC39C1DE2F407008216A6 /* CustomCalloutView.swift */; };
 		0D0AC3A31DE2F6F1008216A6 /* CustomCalloutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D0AC3A21DE2F6F1008216A6 /* CustomCalloutView.xib */; };
 		0D0AC3A51DE30BE2008216A6 /* CustomAnnotationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0AC3A41DE30BE2008216A6 /* CustomAnnotationViewModel.swift */; };
-		0D0AC3A71DE3213C008216A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D0AC3A61DE3213C008216A6 /* Assets.xcassets */; };
 		0D12371B1DD517E30036A89F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D12371A1DD517E30036A89F /* AppDelegate.swift */; };
 		0D12371D1DD517E30036A89F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D12371C1DD517E30036A89F /* MapViewController.swift */; };
 		0D1237201DD517E30036A89F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D12371E1DD517E30036A89F /* Main.storyboard */; };
@@ -35,6 +34,7 @@
 		0D1C530E1DEDB94200E2F9C4 /* BestConditionsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D1C530C1DEDB94200E2F9C4 /* BestConditionsCell.xib */; };
 		0D434E531DEF32EC009A0E4B /* LocationCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D434E521DEF32EC009A0E4B /* LocationCellProtocol.swift */; };
 		0D434E561DEF776C009A0E4B /* CellDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D434E551DEF776C009A0E4B /* CellDataHelper.swift */; };
+		0D434E5E1DF02EA8009A0E4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D434E5D1DF02EA8009A0E4B /* Assets.xcassets */; };
 		0D5CED951DE461BE00FB533C /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5CED941DE461BE00FB533C /* UIViewExtensions.swift */; };
 		0D5CED971DE484EF00FB533C /* LocationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5CED961DE484EF00FB533C /* LocationDetailViewController.swift */; };
 		0D5CED9D1DE5E93200FB533C /* UIImageEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5CED9C1DE5E93200FB533C /* UIImageEffects.swift */; };
@@ -57,7 +57,6 @@
 		0D0AC39C1DE2F407008216A6 /* CustomCalloutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCalloutView.swift; sourceTree = "<group>"; };
 		0D0AC3A21DE2F6F1008216A6 /* CustomCalloutView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCalloutView.xib; sourceTree = "<group>"; };
 		0D0AC3A41DE30BE2008216A6 /* CustomAnnotationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAnnotationViewModel.swift; sourceTree = "<group>"; };
-		0D0AC3A61DE3213C008216A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D1237171DD517E30036A89F /* Stoked.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stoked.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D12371A1DD517E30036A89F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D12371C1DD517E30036A89F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +80,7 @@
 		0D1C530C1DEDB94200E2F9C4 /* BestConditionsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BestConditionsCell.xib; sourceTree = "<group>"; };
 		0D434E521DEF32EC009A0E4B /* LocationCellProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationCellProtocol.swift; sourceTree = "<group>"; };
 		0D434E551DEF776C009A0E4B /* CellDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellDataHelper.swift; sourceTree = "<group>"; };
+		0D434E5D1DF02EA8009A0E4B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D5CED941DE461BE00FB533C /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		0D5CED961DE484EF00FB533C /* LocationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDetailViewController.swift; sourceTree = "<group>"; };
 		0D5CED9C1DE5E93200FB533C /* UIImageEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageEffects.swift; sourceTree = "<group>"; };
@@ -140,7 +140,7 @@
 				0D12371A1DD517E30036A89F /* AppDelegate.swift */,
 				0D12371E1DD517E30036A89F /* Main.storyboard */,
 				0D5CEDA01DE5F41600FB533C /* LaunchScreen */,
-				0D0AC3A61DE3213C008216A6 /* Assets.xcassets */,
+				0D434E5D1DF02EA8009A0E4B /* Assets.xcassets */,
 				0D1237291DD517E30036A89F /* Info.plist */,
 				0D1237211DD517E30036A89F /* Stoked.xcdatamodeld */,
 			);
@@ -261,11 +261,11 @@
 			isa = PBXGroup;
 			children = (
 				0D12372F1DD51F970036A89F /* SWReveaViewController */,
+				0D1237361DD523AA0036A89F /* SlideMenuTableViewController.swift */,
 				0D12371C1DD517E30036A89F /* MapViewController.swift */,
+				0D5CED961DE484EF00FB533C /* LocationDetailViewController.swift */,
 				0D1237381DD53BA30036A89F /* EventViewController.swift */,
 				0D12373A1DD53ED90036A89F /* NewsViewController.swift */,
-				0D1237361DD523AA0036A89F /* SlideMenuTableViewController.swift */,
-				0D5CED961DE484EF00FB533C /* LocationDetailViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -359,11 +359,11 @@
 				0D1C530E1DEDB94200E2F9C4 /* BestConditionsCell.xib in Resources */,
 				0D1C52D81DE9BCCA00E2F9C4 /* WindForecastCell.xib in Resources */,
 				0D5CEE421DE725C400A5083C /* DetailDecriptionCell.xib in Resources */,
+				0D434E5E1DF02EA8009A0E4B /* Assets.xcassets in Resources */,
 				0D1237281DD517E30036A89F /* LaunchScreen.storyboard in Resources */,
 				0D0AC3991DDE45EE008216A6 /* SlideMenuItemCell.xib in Resources */,
 				0D0AC3951DDE38F0008216A6 /* SlideMenuTopCell.xib in Resources */,
 				0D0AC3A31DE2F6F1008216A6 /* CustomCalloutView.xib in Resources */,
-				0D0AC3A71DE3213C008216A6 /* Assets.xcassets in Resources */,
 				0D1237201DD517E30036A89F /* Main.storyboard in Resources */,
 				0D5CEE461DE757F800A5083C /* WeatherForecastCell.xib in Resources */,
 				0D1C52E41DEB770000E2F9C4 /* WaveForecastCell.xib in Resources */,

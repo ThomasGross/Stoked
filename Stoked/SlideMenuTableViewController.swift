@@ -23,12 +23,15 @@ class SlideMenuTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         
-        arrayOfCellData = [cellData(cellId: 1, text: "", image:  #imageLiteral(resourceName: "STOKED_LOGO_COLOUR_RGB")),
-                           cellData(cellId: 2, text: "Locations", image: #imageLiteral(resourceName: "location-arrow-icon-64986")),
-                           cellData(cellId: 2, text: "Events", image: #imageLiteral(resourceName: "Planner")),
-                           cellData(cellId: 2, text: "Newsfeed", image: #imageLiteral(resourceName: "More")),]
+        arrayOfCellData = [cellData(cellId: 1, text: "", image:  #imageLiteral(resourceName: "StokedLogoResize")),
+                           cellData(cellId: 2, text: "Locations", image: #imageLiteral(resourceName: "LocationsLogo")),
+                           cellData(cellId: 2, text: "Events", image: #imageLiteral(resourceName: "eventsLogo")),
+                           cellData(cellId: 2, text: "Newsfeed", image: #imageLiteral(resourceName: "newsLogo")),]
         
+     
         
+        self.tableView.separatorStyle = .none
+        self.tableView.isScrollEnabled = false
     }
 
     override func didReceiveMemoryWarning() {
@@ -74,9 +77,9 @@ class SlideMenuTableViewController: UITableViewController {
         if arrayOfCellData[indexPath.row].cellId == 1 {
             return 140
         } else if arrayOfCellData[indexPath.row].cellId == 2 {
-            return 45
+            return 54
         } else {
-            return 45
+            return 54
         }
         
     }

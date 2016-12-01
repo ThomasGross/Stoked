@@ -69,42 +69,4 @@ class JsonLocationService {
         }
     }
     
-    
-    
-    // Method that retrives the list of tabs in the url by a specific search
-    func getLocations2(completion: @escaping (JSON) -> ()) {
-        
-        // get request
-        Alamofire.request("http://stokedwebapi.azurewebsites.net/api/api")
-            .validate()
-            .responseJSON { response in
-                switch response.result {
-                case .success(let value):
-                    let json = JSON(value)
-                    completion(json)
-                    
-                    
-                    
-                case .failure(let error):
-                    print(error)
-                }
-        }
-    }
-    
-    
-    
-    
-    //        Alamofire.request("http://stokedapi620161110014743.azurewebsites.net/api/api").responseJSON { response in
-    //            print(response.request)  // original URL request
-    //            print(response.response) // HTTP URL response
-    //            print(response.data)     // server data
-    //            print(response.result)   // result of response serialization
-    //
-    //            if let JSON = response.result.value {
-    //                print("JSON: \(JSON)")
-    //            }
-    //        }
-    
-    
-    
 }

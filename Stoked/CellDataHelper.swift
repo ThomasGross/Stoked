@@ -52,20 +52,20 @@ class CellDataHelper {
     }
     
     static func getHeightForWaveView(height: String) -> Double {
+
         let waveHeight: Double = Double(height)!
-        print(waveHeight)
-        
-        if waveHeight <= 0.5 {
+
+        if waveHeight < 0.5 {
             return 30
-        } else if waveHeight >= 0.5 && waveHeight <= 1.0 {
+        } else if waveHeight >= 0.5 && waveHeight < 1.0 {
             return 40
-        } else if waveHeight >= 1.0 && waveHeight <= 1.5 {
+        } else if waveHeight >= 1.0 && waveHeight < 1.5 {
             return 50
-        } else if waveHeight >= 1.5 && waveHeight <= 2.0 {
+        } else if waveHeight >= 1.5 && waveHeight < 2.0 {
             return 60
-        } else if waveHeight >= 2.0 && waveHeight <= 2.5 {
+        } else if waveHeight >= 2.0 && waveHeight < 2.5 {
             return 70
-        } else if waveHeight >= 2.5 && waveHeight <= 3.0 {
+        } else if waveHeight >= 2.5 && waveHeight < 3.0 {
             return 80
         } else if waveHeight >= 3.0 {
             return 90
@@ -82,6 +82,20 @@ class CellDataHelper {
         default:
             return "EXPERT"
         }
+    }
+    
+    static func getImageFromPath(name: String) -> UIImage{
+        
+        let strArray = name.components(separatedBy: "/")
+        
+        
+        if let image: UIImage = UIImage(named: strArray.last!){
+        
+            return image
+        }
+        
+        return UIImage(named: "wsymbol_0003_white_cloud")!
+        
     }
     
 }

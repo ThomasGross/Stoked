@@ -37,7 +37,7 @@
         <scene sceneID="fJa-bZ-OL1">
             <objects>
                 <navigationController id="Vt5-O4-BsZ" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="14d-eM-Jhq">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="14d-eM-Jhq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.69019607839999997" green="0.81176470590000005" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -90,8 +90,8 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bKA-nh-Vml">
-                        <barButtonItem key="leftBarButtonItem" image="1478042679_Menu1-1" id="2uL-ss-yaJ">
-                            <color key="tintColor" red="0.2196078431372549" green="0.2196078431372549" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                        <barButtonItem key="leftBarButtonItem" image="1478042679_Menu1-1" width="3" id="2uL-ss-yaJ">
+                            <color key="tintColor" red="0.21960784310000001" green="0.21960784310000001" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -106,7 +106,7 @@
             </objects>
             <point key="canvasLocation" x="2352.8000000000002" y="-603.14842578710648"/>
         </scene>
-        <!--Location-->
+        <!--LOCATION-->
         <scene sceneID="MIP-c8-SpT">
             <objects>
                 <viewController id="c1L-6s-aBU" customClass="LocationDetailViewController" customModule="Stoked" customModuleProvider="target" sceneMemberID="viewController">
@@ -135,19 +135,21 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="xoK-tW-TmP" firstAttribute="leading" secondItem="VGe-0s-akl" secondAttribute="leading" constant="7" id="0G4-2Y-ft9"/>
-                            <constraint firstItem="YyL-bS-a5X" firstAttribute="top" secondItem="731-OP-8Ns" secondAttribute="bottom" id="185-gR-kE2"/>
-                            <constraint firstItem="ysw-MB-5pe" firstAttribute="top" secondItem="xoK-tW-TmP" secondAttribute="bottom" id="7EV-eN-zx8"/>
+                            <constraint firstItem="xoK-tW-TmP" firstAttribute="leading" secondItem="VGe-0s-akl" secondAttribute="leadingMargin" constant="-9" id="68C-le-VEg"/>
+                            <constraint firstItem="YyL-bS-a5X" firstAttribute="centerX" secondItem="xoK-tW-TmP" secondAttribute="centerX" id="97F-hj-clu"/>
                             <constraint firstItem="ANF-Q7-MTe" firstAttribute="top" secondItem="731-OP-8Ns" secondAttribute="bottom" constant="15" id="Avi-KQ-xJy"/>
-                            <constraint firstAttribute="trailing" secondItem="YyL-bS-a5X" secondAttribute="trailing" id="Ley-BP-AFD"/>
-                            <constraint firstItem="YyL-bS-a5X" firstAttribute="leading" secondItem="VGe-0s-akl" secondAttribute="leading" id="NkD-kt-DdR"/>
-                            <constraint firstItem="xoK-tW-TmP" firstAttribute="top" secondItem="731-OP-8Ns" secondAttribute="bottom" id="hy8-W7-B91"/>
-                            <constraint firstAttribute="trailing" secondItem="xoK-tW-TmP" secondAttribute="trailing" constant="6" id="jo8-M8-tLV"/>
+                            <constraint firstItem="YyL-bS-a5X" firstAttribute="leading" secondItem="VGe-0s-akl" secondAttribute="leading" id="KkQ-ZD-Uef"/>
+                            <constraint firstItem="YyL-bS-a5X" firstAttribute="bottom" secondItem="ysw-MB-5pe" secondAttribute="top" id="N2s-za-556"/>
+                            <constraint firstAttribute="trailing" secondItem="YyL-bS-a5X" secondAttribute="trailing" id="VhE-L3-jR2"/>
+                            <constraint firstItem="xoK-tW-TmP" firstAttribute="bottom" secondItem="ysw-MB-5pe" secondAttribute="top" id="bax-aw-sUX"/>
+                            <constraint firstItem="YyL-bS-a5X" firstAttribute="top" secondItem="731-OP-8Ns" secondAttribute="bottom" id="dQu-E2-QFg"/>
+                            <constraint firstItem="YyL-bS-a5X" firstAttribute="top" secondItem="xoK-tW-TmP" secondAttribute="top" id="fus-Lz-Q0C"/>
                             <constraint firstItem="ANF-Q7-MTe" firstAttribute="leading" secondItem="VGe-0s-akl" secondAttribute="leadingMargin" id="lvq-13-pKi"/>
-                            <constraint firstItem="ysw-MB-5pe" firstAttribute="top" secondItem="YyL-bS-a5X" secondAttribute="bottom" id="zHJ-9d-lXE"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Location" id="wtp-bG-PNT"/>
+                    <navigationItem key="navigationItem" title="LOCATION" id="wtp-bG-PNT"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="backgroundImage" destination="YyL-bS-a5X" id="JgZ-7F-J8x"/>
                         <outlet property="detailTableView" destination="xoK-tW-TmP" id="QpS-Qg-868"/>
@@ -156,7 +158,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fzg-0J-lgH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3140" y="-603.14842578710648"/>
+            <point key="canvasLocation" x="3139.5" y="-603.5"/>
         </scene>
         <!--Event View Controller-->
         <scene sceneID="NnG-53-jX4">
@@ -169,15 +171,23 @@
                     <view key="view" contentMode="scaleToFill" id="vWx-xc-WDY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y78-BM-Qnb">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="jno-ZN-9J5">
                         <barButtonItem key="leftBarButtonItem" image="1478042679_Menu1-1" id="sxr-nv-uOt">
-                            <color key="tintColor" red="0.2196078431372549" green="0.2196078431372549" blue="0.2196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="0.21960784310000001" green="0.21960784310000001" blue="0.21960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="SideMenuButton" destination="sxr-nv-uOt" id="qfH-DE-sbc"/>
+                        <outlet property="webView" destination="Y78-BM-Qnb" id="9jt-nP-Gug"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H8W-Bd-6mN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -195,6 +205,13 @@
                     <view key="view" contentMode="scaleToFill" id="r8N-na-dr2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Lj-Tu-5N4">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Fk3-OA-9iB">
@@ -204,11 +221,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="SideMenuButton" destination="UO0-0M-YWu" id="Ruc-0d-LPy"/>
+                        <outlet property="webView" destination="1Lj-Tu-5N4" id="tmV-ws-A5a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rNO-cv-fin" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2353" y="798"/>
+            <point key="canvasLocation" x="2352.8000000000002" y="797.45127436281871"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="CM2-tD-RNM">
@@ -275,6 +293,6 @@
         <image name="Surf4.Foto-Gjerluff-Photography-1030x686-2" width="1030" height="686"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="tJv-ve-yva"/>
+        <segue reference="Tit-Dt-Fu1"/>
     </inferredMetricsTieBreakers>
 </document>

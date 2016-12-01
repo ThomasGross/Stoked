@@ -71,15 +71,14 @@ class WeatherForecastCell: UITableViewCell, LocationCellProtocol {
         tempIntMin = json["data"]["weather"][0]["mintempC"].doubleValue
         tempIntMax = json["data"]["weather"][0]["maxtempC"].doubleValue
         
-        print(tempIntMin)
-        print(tempIntMax)
-        
         result = Double((tempIntMin + tempIntMax) / 2)
         currentWeatherLabel.text = "\(result)°"
         txt = json["data"]["weather"][0]["hourly"][0]["precipMM"].stringValue
         precipitation.text = txt.appending("% PRECIPITATION")
         txt = json["data"]["weather"][0]["hourly"][0]["weatherDesc"][0]["value"].stringValue
         weatherDecription.text = txt.uppercased()
+        
+        currentWeatherIcon.image = CellDataHelper.getImageFromPath(name: json["data"]["weather"][0]["hourly"][0]["weatherIconUrl"][0]["value"].stringValue)
         
         var tempMin: String = ""
         var tempMax: String = ""
@@ -92,6 +91,8 @@ class WeatherForecastCell: UITableViewCell, LocationCellProtocol {
         tempWeekDayName = json["data"]["weather"][1]["date"].stringValue
         firstWeekdayName.text = Date().getDayOfWeek(today: tempWeekDayName)
         
+        firstDayIcon.image = CellDataHelper.getImageFromPath(name: json["data"]["weather"][1]["hourly"][0]["weatherIconUrl"][0]["value"].stringValue)
+        
         // Second day weather
         tempMin = json["data"]["weather"][2]["mintempC"].stringValue
         tempMax = json["data"]["weather"][2]["maxtempC"].stringValue
@@ -99,6 +100,8 @@ class WeatherForecastCell: UITableViewCell, LocationCellProtocol {
         
         tempWeekDayName = json["data"]["weather"][2]["date"].stringValue
         secondWeekdayName.text = Date().getDayOfWeek(today: tempWeekDayName)
+        
+        secondDayIcon.image = CellDataHelper.getImageFromPath(name: json["data"]["weather"][2]["hourly"][0]["weatherIconUrl"][0]["value"].stringValue)
         
         // Third day weather
         tempMin = json["data"]["weather"][3]["mintempC"].stringValue
@@ -108,6 +111,8 @@ class WeatherForecastCell: UITableViewCell, LocationCellProtocol {
         tempWeekDayName = json["data"]["weather"][3]["date"].stringValue
         thirdWeekdayName.text = Date().getDayOfWeek(today: tempWeekDayName)
         
+        thirdDayIcon.image = CellDataHelper.getImageFromPath(name: json["data"]["weather"][3]["hourly"][0]["weatherIconUrl"][0]["value"].stringValue)
+        
         // Fourth day weather
         tempMin = json["data"]["weather"][4]["mintempC"].stringValue
         tempMax = json["data"]["weather"][4]["maxtempC"].stringValue
@@ -116,6 +121,8 @@ class WeatherForecastCell: UITableViewCell, LocationCellProtocol {
         tempWeekDayName = json["data"]["weather"][4]["date"].stringValue
         fourthWeekdayName.text = Date().getDayOfWeek(today: tempWeekDayName)
         
+        fourthDayIcon.image = CellDataHelper.getImageFromPath(name: json["data"]["weather"][4]["hourly"][0]["weatherIconUrl"][0]["value"].stringValue)
+        
         // Fifth day weather
         tempMin = json["data"]["weather"][5]["mintempC"].stringValue
         tempMax = json["data"]["weather"][5]["maxtempC"].stringValue
@@ -123,6 +130,8 @@ class WeatherForecastCell: UITableViewCell, LocationCellProtocol {
         
         tempWeekDayName = json["data"]["weather"][5]["date"].stringValue
         fifthWeekdayName.text = Date().getDayOfWeek(today: tempWeekDayName)
+        
+        fifthDayIcon.image = CellDataHelper.getImageFromPath(name: json["data"]["weather"][5]["hourly"][0]["weatherIconUrl"][0]["value"].stringValue)
         
     }
     

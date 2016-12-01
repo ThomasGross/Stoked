@@ -16,8 +16,6 @@ class EventViewController: UIViewController, UIWebViewDelegate {
 
     @IBOutlet var webView: UIWebView!
     
-    var locations: [LocationModel]?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
