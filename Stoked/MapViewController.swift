@@ -14,7 +14,25 @@ import SwiftyJSON
 
 class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
-    @IBOutlet weak var locationActivityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var segmentedControlForAnnotationOutlet: UISegmentedControl!
+    
+    @IBAction func segmentedControlForAnnotation(_ sender: UISegmentedControl) {
+        switch segmentedControlForAnnotationOutlet.selectedSegmentIndex
+        {
+        case 0:
+            sortAnnotations(type: 0)
+        case 1:
+            sortAnnotations(type: 1)
+        case 2:
+            sortAnnotations(type: 2)
+        case 3:
+            sortAnnotations(type: 3)
+        default:
+            break;
+        }
+    }
+
+    @IBOutlet weak var locationActivityIndicator:UIActivityIndicatorView!
     
     @IBOutlet weak var SideMenuButton: UIBarButtonItem!
     
@@ -52,7 +70,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         
-        addAnnotations()
+        getAnnotations()
         
         
         // sets the delegate to be self
@@ -103,26 +121,39 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         
     }
     
-    func addAnnotations() {
+    func sortAnnotations(type: Int) {
+        self.MapView.removeAnnotations(MapView.annotations)
+        
+        if type == 0{
+            addAnnotations()
+        } else {
+            
+            for location in locations where location.showLocation == true{
+                
+                if location.isSurfLocation == true && type == 1 {
+                    addSpecificAnnotation(location: location)
+                }
+                else if location.isSUPLocation == true && type == 2 {
+                    addSpecificAnnotation(location: location)
+                }
+                else if location.isWhiteWaterLocation == true && type == 3 {
+                    addSpecificAnnotation(location: location)
+                } else  {
+                    print("")
+                }
+            }
+        }
+    }
+    
+    
+    
+    func getAnnotations() {
         
         DispatchQueue.main.async {
             self.jsonLocationService.getLocations() { responceLocation in
                 self.locations = responceLocation
                 
-                
-                // loops though the list of mapitems in the response
-                for location in self.locations {
-                    if location.showLocation == true{
-                        
-                        let customAnnotation = CustomAnnotationModel()
-                        
-                        let locationCordinate = CLLocationCoordinate2D(latitude: location.locationLat, longitude: location.locationLong)
-                        customAnnotation.locationId = location.locationId
-                        customAnnotation.coordinate = locationCordinate // assign cordinate to the annotation
-                        
-                        self.MapView.addAnnotation(customAnnotation) // add the annotation to the map
-                    }
-                }
+                self.addAnnotations()
                 
                 self.locationActivityIndicator.stopAnimating()
                 self.locationActivityIndicator.isHidden = true
@@ -130,6 +161,37 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         }
         
     }
+    
+    func addAnnotations (){
+        
+        // loops though the list of mapitems in the response
+        for location in self.locations where location.showLocation == true {
+            
+            let customAnnotation = CustomAnnotationModel()
+            
+            let locationCordinate = CLLocationCoordinate2D(latitude: location.locationLat, longitude: location.locationLong)
+            customAnnotation.locationId = location.locationId
+            customAnnotation.coordinate = locationCordinate // assign cordinate to the annotation
+            
+            self.MapView.addAnnotation(customAnnotation) // add the annotation to the map
+            
+        }
+    }
+    
+    func addSpecificAnnotation (location: LocationModel){
+        
+        let customAnnotation = CustomAnnotationModel()
+        
+        let locationCordinate = CLLocationCoordinate2D(latitude: location.locationLat, longitude: location.locationLong)
+        customAnnotation.locationId = location.locationId
+        customAnnotation.coordinate = locationCordinate // assign cordinate to the annotation
+        
+        self.MapView.addAnnotation(customAnnotation) // add the annotation to the map
+        
+    }
+    
+    
+    
     
     //MARK: MKMapViewDelegate
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
@@ -153,26 +215,26 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     }
     
     
-        // Drop pin animation
-//    func mapView(_ mapView: MKMapView, didAdd views: [MKAnnotationView]) {
-//        let visibleRect = mapView.annotationVisibleRect
-//        
-//        for view:MKAnnotationView in views{
-//            let endFrame:CGRect = view.frame
-//            var startFrame:CGRect = endFrame
-//            startFrame.origin.y = visibleRect.origin.y - startFrame.size.height
-//            view.frame = startFrame;
-//            
-//            UIView.beginAnimations("drop", context: nil)
-//            
-//            UIView.setAnimationDuration(1.5)
-//            
-//            view.frame = endFrame;
-//            
-//            
-//            UIView.commitAnimations()
-//        }
-//    }
+    // Drop pin animation
+    //    func mapView(_ mapView: MKMapView, didAdd views: [MKAnnotationView]) {
+    //        let visibleRect = mapView.annotationVisibleRect
+    //
+    //        for view:MKAnnotationView in views{
+    //            let endFrame:CGRect = view.frame
+    //            var startFrame:CGRect = endFrame
+    //            startFrame.origin.y = visibleRect.origin.y - startFrame.size.height
+    //            view.frame = startFrame;
+    //
+    //            UIView.beginAnimations("drop", context: nil)
+    //
+    //            UIView.setAnimationDuration(1.5)
+    //
+    //            view.frame = endFrame;
+    //
+    //
+    //            UIView.commitAnimations()
+    //        }
+    //    }
     
     
     
@@ -188,7 +250,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         
         locationActivityIndicator.startAnimating()
         locationActivityIndicator.isHidden = false
-
+        
         for location in locations {
             if location.locationId == customAnnotation.locationId  {
                 
@@ -220,7 +282,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                 }
             }
         }
- 
+        
     }
     
     func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
@@ -239,7 +301,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         
         if animated == false {
             self.calloutButton.isHidden = true
-           
+            
         }else {
             
         }

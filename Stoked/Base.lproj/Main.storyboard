@@ -78,19 +78,45 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="QuE-5X-SzX">
                                 <rect key="frame" x="339" y="72" width="20" height="20"/>
                             </activityIndicatorView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="PlK-B5-H5U">
+                                <rect key="frame" x="8" y="619" width="359" height="29"/>
+                                <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="YEY-b9-JLu"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="ALL"/>
+                                    <segment title="Surf"/>
+                                    <segment title="SUP"/>
+                                    <segment title="White Water"/>
+                                </segments>
+                                <color key="tintColor" red="0.21960784310000001" green="0.21960784310000001" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="segmentedControlForAnnotation:" destination="exS-cu-dFS" eventType="valueChanged" id="h1K-MB-26q"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="PlK-B5-H5U" firstAttribute="leading" secondItem="LTB-LT-JAV" secondAttribute="leading" constant="8" id="1zV-xI-KBt"/>
+                            <constraint firstAttribute="trailing" secondItem="PlK-B5-H5U" secondAttribute="trailing" constant="8" id="3wn-5d-Ds1"/>
+                            <constraint firstItem="PlK-B5-H5U" firstAttribute="centerX" secondItem="LTB-LT-JAV" secondAttribute="centerX" id="7HY-0f-ljW"/>
                             <constraint firstItem="QuE-5X-SzX" firstAttribute="trailing" secondItem="LTB-LT-JAV" secondAttribute="trailingMargin" id="BL4-Xf-UD2"/>
                             <constraint firstItem="opN-Iv-SCg" firstAttribute="top" secondItem="oId-77-7dm" secondAttribute="bottom" id="FXH-a5-wFb"/>
                             <constraint firstItem="QuE-5X-SzX" firstAttribute="top" secondItem="qso-P3-axc" secondAttribute="bottom" constant="8" id="Jjx-xj-kfd"/>
                             <constraint firstAttribute="trailing" secondItem="oId-77-7dm" secondAttribute="trailing" id="YyG-hy-5d6"/>
+                            <constraint firstItem="opN-Iv-SCg" firstAttribute="top" secondItem="PlK-B5-H5U" secondAttribute="bottom" constant="20" id="bcv-gD-XmI"/>
                             <constraint firstItem="oId-77-7dm" firstAttribute="top" secondItem="qso-P3-axc" secondAttribute="bottom" id="bfO-6C-5C6"/>
                             <constraint firstItem="oId-77-7dm" firstAttribute="leading" secondItem="LTB-LT-JAV" secondAttribute="leading" id="kvR-sy-92c"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bKA-nh-Vml">
-                        <barButtonItem key="leftBarButtonItem" image="1478042679_Menu1-1" width="3" id="2uL-ss-yaJ">
+                        <barButtonItem key="leftBarButtonItem" image="burgerResize64x64" width="3" id="2uL-ss-yaJ">
                             <color key="tintColor" red="0.21960784310000001" green="0.21960784310000001" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                     </navigationItem>
@@ -99,6 +125,7 @@
                         <outlet property="SideMenuButton" destination="2uL-ss-yaJ" id="9dr-S2-o8a"/>
                         <outlet property="calloutButton" destination="rRg-6q-E7N" id="cn1-87-AiW"/>
                         <outlet property="locationActivityIndicator" destination="QuE-5X-SzX" id="x5J-SM-KLs"/>
+                        <outlet property="segmentedControlForAnnotationOutlet" destination="PlK-B5-H5U" id="7ny-gt-Xbd"/>
                         <segue destination="c1L-6s-aBU" kind="show" identifier="segueToDetailView" id="pE2-Lh-lbT"/>
                     </connections>
                 </viewController>
@@ -181,7 +208,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="jno-ZN-9J5">
-                        <barButtonItem key="leftBarButtonItem" image="1478042679_Menu1-1" id="sxr-nv-uOt">
+                        <barButtonItem key="leftBarButtonItem" image="burgerResize64x64" id="sxr-nv-uOt">
                             <color key="tintColor" red="0.21960784310000001" green="0.21960784310000001" blue="0.21960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
                     </navigationItem>
@@ -215,7 +242,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Fk3-OA-9iB">
-                        <barButtonItem key="leftBarButtonItem" image="1478042679_Menu1-1" id="UO0-0M-YWu">
+                        <barButtonItem key="leftBarButtonItem" image="burgerResize64x64" id="UO0-0M-YWu">
                             <color key="tintColor" red="0.2196078431372549" green="0.2196078431372549" blue="0.2196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
                     </navigationItem>
@@ -288,9 +315,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="1478042679_Menu1-1" width="37" height="37"/>
         <image name="STOKED_LOGO_WHITE_RGB" width="1887" height="487"/>
         <image name="Surf4.Foto-Gjerluff-Photography-1030x686-2" width="1030" height="686"/>
+        <image name="burgerResize64x64" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Tit-Dt-Fu1"/>
