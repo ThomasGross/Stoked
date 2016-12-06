@@ -8,9 +8,9 @@
 
 import Foundation
 
-class CellDataHelper {
+class CellDataController {
     
-    static func getDirectDegreeFromString(direction: String) -> Double {
+    func getDirectDegreeFromString(direction: String) -> Double {
         let direct: String = direction.uppercased()
         
         switch direct {
@@ -51,7 +51,7 @@ class CellDataHelper {
         }
     }
     
-    static func getHeightForWaveView(height: String) -> Double {
+    func getHeightForWaveView(height: String) -> Double {
 
         let waveHeight: Double = Double(height)!
 
@@ -73,29 +73,27 @@ class CellDataHelper {
         return 30
     }
     
-    static func getDifficultyLevel(level: Int) -> String {
+    func getDifficultyLevel(level: Int) -> String {
         switch (level){
         case 1:
             return "BEGINNER"
-        case 2:
+        case 2: 
             return "INTERMEDIATE"
         default:
             return "EXPERT"
         }
     }
     
-    static func getImageFromPath(name: String) -> UIImage{
+    func getImageFromPath(name: String) -> UIImage{
         
         let strArray = name.components(separatedBy: "/")
         
-        
         if let image: UIImage = UIImage(named: strArray.last!){
-        
             return image
         }
-        
         return UIImage(named: "wsymbol_0003_white_cloud")!
-        
     }
+    
+
     
 }

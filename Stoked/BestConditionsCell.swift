@@ -25,29 +25,17 @@ class BestConditionsCell: UITableViewCell, LocationCellProtocol {
     @IBOutlet weak var bestWaveHeightLabel: UILabel!
     @IBOutlet weak var bestWaveHeightName: UILabel!
     
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-        
-        
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+    var cellDataHelper = CellDataController()
 
 }
 
 extension BestConditionsCell {
     
+    
     func populateCell(json: JSON, location: LocationModel) {
         var tempWindDirectionDegree: Double = 0.0
         var tempWaveDirectionDegree: Double = 0.0
         var tempimageIcon: UIImage?
-        
         
         bestWindDirectLabel.text = location.bestWindDirection
         bestWindDirectName.text = "WIND\nDIRECTION"
@@ -61,12 +49,12 @@ extension BestConditionsCell {
         bestWaveHeightName.text = "WAVE\nHEIGHT"
         
         // Icons
-        tempWindDirectionDegree = CellDataHelper.getDirectDegreeFromString(direction: location.bestWindDirection)
+        tempWindDirectionDegree = cellDataHelper.getDirectDegreeFromString(direction: location.bestWindDirection)
         bestWindDirectIcon.transform = CGAffineTransform(rotationAngle: CGFloat(tempWindDirectionDegree * M_PI/180))
         tempimageIcon = bestWindDirectIcon.image?.imageWithColor(color: UIColor(red:0.69, green:0.81, blue:0.86, alpha:1.0))
         bestWindDirectIcon.image = tempimageIcon
         
-        tempWaveDirectionDegree = CellDataHelper.getDirectDegreeFromString(direction: location.bestWaveDirection)
+        tempWaveDirectionDegree = cellDataHelper.getDirectDegreeFromString(direction: location.bestWaveDirection)
         bestWaveDirectIcon.transform = CGAffineTransform(rotationAngle: CGFloat(tempWaveDirectionDegree * M_PI/180))
         tempimageIcon = bestWaveDirectIcon.image?.imageWithColor(color: UIColor(red:0.69, green:0.81, blue:0.86, alpha:1.0))
         bestWaveDirectIcon.image = tempimageIcon

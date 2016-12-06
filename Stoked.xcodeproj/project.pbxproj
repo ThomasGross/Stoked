@@ -33,7 +33,7 @@
 		0D1C530D1DEDB94200E2F9C4 /* BestConditionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C530B1DEDB94200E2F9C4 /* BestConditionsCell.swift */; };
 		0D1C530E1DEDB94200E2F9C4 /* BestConditionsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D1C530C1DEDB94200E2F9C4 /* BestConditionsCell.xib */; };
 		0D434E531DEF32EC009A0E4B /* LocationCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D434E521DEF32EC009A0E4B /* LocationCellProtocol.swift */; };
-		0D434E561DEF776C009A0E4B /* CellDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D434E551DEF776C009A0E4B /* CellDataHelper.swift */; };
+		0D434E561DEF776C009A0E4B /* CellDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D434E551DEF776C009A0E4B /* CellDataController.swift */; };
 		0D434E5E1DF02EA8009A0E4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D434E5D1DF02EA8009A0E4B /* Assets.xcassets */; };
 		0D5CED951DE461BE00FB533C /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5CED941DE461BE00FB533C /* UIViewExtensions.swift */; };
 		0D5CED971DE484EF00FB533C /* LocationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5CED961DE484EF00FB533C /* LocationDetailViewController.swift */; };
@@ -45,6 +45,7 @@
 		0D7A13DC1DDB48A3003AAE4B /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7A13DB1DDB48A3003AAE4B /* LocationModel.swift */; };
 		0D7A13E11DDB5DA0003AAE4B /* JsonLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7A13E01DDB5DA0003AAE4B /* JsonLocationService.swift */; };
 		0D8AB83B1DE870C80073B0AB /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8AB83A1DE870C80073B0AB /* DateExtension.swift */; };
+		0D99FC001DF5BAE500290EDD /* ParseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D99FBFF1DF5BAE500290EDD /* ParseController.swift */; };
 		138560E1F9EA87B62DE934DA /* Pods_Stoked.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2E23F3DEB60981741C15847 /* Pods_Stoked.framework */; };
 /* End PBXBuildFile section */
 
@@ -79,7 +80,7 @@
 		0D1C530B1DEDB94200E2F9C4 /* BestConditionsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BestConditionsCell.swift; sourceTree = "<group>"; };
 		0D1C530C1DEDB94200E2F9C4 /* BestConditionsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BestConditionsCell.xib; sourceTree = "<group>"; };
 		0D434E521DEF32EC009A0E4B /* LocationCellProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationCellProtocol.swift; sourceTree = "<group>"; };
-		0D434E551DEF776C009A0E4B /* CellDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellDataHelper.swift; sourceTree = "<group>"; };
+		0D434E551DEF776C009A0E4B /* CellDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellDataController.swift; sourceTree = "<group>"; };
 		0D434E5D1DF02EA8009A0E4B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D5CED941DE461BE00FB533C /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		0D5CED961DE484EF00FB533C /* LocationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDetailViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +92,7 @@
 		0D7A13DB1DDB48A3003AAE4B /* LocationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		0D7A13E01DDB5DA0003AAE4B /* JsonLocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonLocationService.swift; sourceTree = "<group>"; };
 		0D8AB83A1DE870C80073B0AB /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		0D99FBFF1DF5BAE500290EDD /* ParseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseController.swift; sourceTree = "<group>"; };
 		24663D96828F2B531D953FFA /* Pods-Stoked.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stoked.release.xcconfig"; path = "Pods/Target Support Files/Pods-Stoked/Pods-Stoked.release.xcconfig"; sourceTree = "<group>"; };
 		56987066F372C920424954A2 /* Pods-Stoked.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stoked.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Stoked/Pods-Stoked.debug.xcconfig"; sourceTree = "<group>"; };
 		E2E23F3DEB60981741C15847 /* Pods_Stoked.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stoked.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,7 +134,6 @@
 			children = (
 				0D434E5A1DEF85CD009A0E4B /* XibFiles */,
 				0D434E511DEF30A6009A0E4B /* Protocols */,
-				0D434E541DEF7700009A0E4B /* Singletons */,
 				0D7A13DF1DDB5A96003AAE4B /* Services */,
 				0D7A13DD1DDB48B2003AAE4B /* Models */,
 				0D7A13DE1DDB48C6003AAE4B /* Controllers */,
@@ -174,17 +175,10 @@
 			name = Protocols;
 			sourceTree = "<group>";
 		};
-		0D434E541DEF7700009A0E4B /* Singletons */ = {
-			isa = PBXGroup;
-			children = (
-				0D434E551DEF776C009A0E4B /* CellDataHelper.swift */,
-			);
-			name = Singletons;
-			sourceTree = "<group>";
-		};
 		0D434E571DEF83FB009A0E4B /* LocationDetailCells */ = {
 			isa = PBXGroup;
 			children = (
+				0D99FC011DF6DC7300290EDD /* CellControllers */,
 				0D1C530B1DEDB94200E2F9C4 /* BestConditionsCell.swift */,
 				0D1C530C1DEDB94200E2F9C4 /* BestConditionsCell.xib */,
 				0D1C52E11DEB770000E2F9C4 /* WaveForecastCell.swift */,
@@ -279,6 +273,15 @@
 			name = Services;
 			sourceTree = "<group>";
 		};
+		0D99FC011DF6DC7300290EDD /* CellControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0D434E551DEF776C009A0E4B /* CellDataController.swift */,
+				0D99FBFF1DF5BAE500290EDD /* ParseController.swift */,
+			);
+			name = CellControllers;
+			sourceTree = "<group>";
+		};
 		812B563A6B510D6885D53F8B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -323,6 +326,7 @@
 				TargetAttributes = {
 					0D1237161DD517E30036A89F = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = MA882BJCMT;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -437,6 +441,7 @@
 				0D434E531DEF32EC009A0E4B /* LocationCellProtocol.swift in Sources */,
 				0D5CEE451DE757F800A5083C /* WeatherForecastCell.swift in Sources */,
 				0D1237371DD523AA0036A89F /* SlideMenuTableViewController.swift in Sources */,
+				0D99FC001DF5BAE500290EDD /* ParseController.swift in Sources */,
 				0D5CEE411DE725C400A5083C /* DetailDecriptionCell.swift in Sources */,
 				0D0AC38F1DDDACFB008216A6 /* CustomAnnotationModel.swift in Sources */,
 				0D12371D1DD517E30036A89F /* MapViewController.swift in Sources */,
@@ -448,7 +453,7 @@
 				0D0AC3981DDE45EE008216A6 /* SlideMenuItemCell.swift in Sources */,
 				0D12371B1DD517E30036A89F /* AppDelegate.swift in Sources */,
 				0D1237331DD51FC40036A89F /* SWRevealViewController.m in Sources */,
-				0D434E561DEF776C009A0E4B /* CellDataHelper.swift in Sources */,
+				0D434E561DEF776C009A0E4B /* CellDataController.swift in Sources */,
 				0D0AC3941DDE38F0008216A6 /* SlideMenuTopCell.swift in Sources */,
 				0D7A13E11DDB5DA0003AAE4B /* JsonLocationService.swift in Sources */,
 			);
@@ -576,9 +581,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = MA882BJCMT;
 				INFOPLIST_FILE = Stoked/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.thomasrasmussen.Stoked;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thomasrasmussen.Stoked1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Stoked/Stoked-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -593,9 +600,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = MA882BJCMT;
 				INFOPLIST_FILE = Stoked/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.thomasrasmussen.Stoked;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thomasrasmussen.Stoked1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Stoked/Stoked-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;

@@ -51,129 +51,60 @@ class WaveForecastCell: UITableViewCell, LocationCellProtocol {
     @IBOutlet weak var fourthDayWaveHeightView: UIView!
     
     
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
     func populateCell(json: JSON, location: LocationModel) {
         
-        var tempWeekDayName: String = ""
-        var tempimageIcon: UIImage?
-        
         var tempWaveHeight: String = ""
-        var tempWaveDirect: String = ""
-        var tempWaveSpeed: String = ""
-        var tempWaveDirectionDegree: Double = 0.0
+        
+        let parseController = ParseController()
         
         // Todays wave
-        tempWaveHeight = json["data"]["weather"][0]["hourly"][0]["swellHeight_m"].stringValue
+        tempWaveHeight = parseController.getWaveHeightForDay(day: 0, json: json)
         currentWaveHeight.text = tempWaveHeight
-        
-        NSLayoutConstraint.activate(getHeightContraints(height: tempWaveHeight, view: currentWaveHeightView))
-        
-        tempWaveDirect = json["data"]["weather"][0]["hourly"][0]["swellDir16Point"].stringValue
-        currentWaveDirection.text = tempWaveDirect
-        tempWaveSpeed = json["data"]["weather"][0]["hourly"][0]["swellPeriod_secs"].stringValue
-        currentWaveSpeed.text = tempWaveSpeed.appending("s")
-        
-        // Icon rotation
-        tempWaveDirectionDegree = json["data"]["weather"][0]["hourly"][0]["swellDir"].doubleValue
-        currentWaveDirectionIcon.transform = CGAffineTransform(rotationAngle: CGFloat(tempWaveDirectionDegree * M_PI/180))
-        tempimageIcon = currentWaveDirectionIcon.image?.imageWithColor(color: UIColor(red:0.69, green:0.81, blue:0.86, alpha:1.0))
-        currentWaveDirectionIcon.image = tempimageIcon
+        currentWaveDirection.text = parseController.getWaveDirectionForDay(day: 0, json: json)
+        currentWaveSpeed.text = parseController.getWaveSpeedForDay(day: 0, json: json).appending("s")
+        NSLayoutConstraint.activate(parseController.getHeightContraints(height: tempWaveHeight, view: currentWaveHeightView))
+        currentWaveDirectionIcon = parseController.getWaveDirectionArrowForDay(imageView: currentWaveDirectionIcon, day: 0, json: json)
         
         // First day wave
-        tempWaveHeight = json["data"]["weather"][1]["hourly"][0]["swellHeight_m"].stringValue
+        firstDayName.text = parseController.getWeekDay(day: 1, json: json)
+        tempWaveHeight = parseController.getWaveHeightForDay(day: 1, json: json)
         firstDayWaveHeight.text = tempWaveHeight
-        NSLayoutConstraint.activate(getHeightContraints(height: tempWaveHeight, view: firstDayWaveHeightView))
-        tempWeekDayName = json["data"]["weather"][1]["date"].stringValue
-        firstDayName.text = Date().getDayOfWeek(today: tempWeekDayName)
-        tempWaveDirect = json["data"]["weather"][1]["hourly"][0]["swellDir16Point"].stringValue
-        firstDayWaveDirection.text = tempWaveDirect
-        tempWaveSpeed = json["data"]["weather"][1]["hourly"][0]["swellPeriod_secs"].stringValue
-        firstDayWaveSpeed.text = tempWaveSpeed.appending("s")
-        
-        // Icon
-        tempWaveDirectionDegree = json["data"]["weather"][1]["hourly"][0]["swellDir"].doubleValue
-        firstDayWaveDirectIcon.transform = CGAffineTransform(rotationAngle: CGFloat(tempWaveDirectionDegree * M_PI/180))
-        tempimageIcon = firstDayWaveDirectIcon.image?.imageWithColor(color: UIColor(red:0.69, green:0.81, blue:0.86, alpha:1.0))
-        firstDayWaveDirectIcon.image = tempimageIcon
+        firstDayWaveDirection.text = parseController.getWaveDirectionForDay(day: 1, json: json)
+        firstDayWaveSpeed.text = parseController.getWaveSpeedForDay(day: 1, json: json).appending("s")
+        NSLayoutConstraint.activate(parseController.getHeightContraints(height: tempWaveHeight, view: firstDayWaveHeightView))
+        firstDayWaveDirectIcon = parseController.getWaveDirectionArrowForDay(imageView: firstDayWaveDirectIcon, day: 1, json: json)
         
         
         // Second day wave
-        tempWaveHeight = json["data"]["weather"][2]["hourly"][0]["swellHeight_m"].stringValue
+        secondDayName.text = parseController.getWeekDay(day: 2, json: json)
+        tempWaveHeight = parseController.getWaveHeightForDay(day: 2, json: json)
         secondDayWaveHeight.text = tempWaveHeight
-        NSLayoutConstraint.activate(getHeightContraints(height: tempWaveHeight, view: secondDayWaveHeightView))
-        tempWeekDayName = json["data"]["weather"][2]["date"].stringValue
-        secondDayName.text = Date().getDayOfWeek(today: tempWeekDayName)
-        tempWaveDirect = json["data"]["weather"][2]["hourly"][0]["swellDir16Point"].stringValue
-        secondDayWaveDirect.text = tempWaveDirect
-        tempWaveSpeed = json["data"]["weather"][2]["hourly"][0]["swellPeriod_secs"].stringValue
-        secondDayWaveSpeed.text = tempWaveSpeed.appending("s")
-        
-        // Icon
-        tempWaveDirectionDegree = json["data"]["weather"][2]["hourly"][0]["swellDir"].doubleValue
-        secondDayWaveDirectIcon.transform = CGAffineTransform(rotationAngle: CGFloat(tempWaveDirectionDegree * M_PI/180))
-        tempimageIcon = secondDayWaveDirectIcon.image?.imageWithColor(color: UIColor(red:0.69, green:0.81, blue:0.86, alpha:1.0))
-        secondDayWaveDirectIcon.image = tempimageIcon
+        secondDayWaveDirect.text = parseController.getWaveDirectionForDay(day: 2, json: json)
+        secondDayWaveSpeed.text = parseController.getWaveSpeedForDay(day: 2, json: json).appending("s")
+        NSLayoutConstraint.activate(parseController.getHeightContraints(height: tempWaveHeight, view: secondDayWaveHeightView))
+        secondDayWaveDirectIcon = parseController.getWaveDirectionArrowForDay(imageView: secondDayWaveDirectIcon, day: 2, json: json)
         
         // Third day wave
-        tempWaveHeight = json["data"]["weather"][3]["hourly"][0]["swellHeight_m"].stringValue
+        thirdDayName.text = parseController.getWeekDay(day: 3, json: json)
+        tempWaveHeight = parseController.getWaveHeightForDay(day: 3, json: json)
         thirdDayWaveHeight.text = tempWaveHeight
-        NSLayoutConstraint.activate(getHeightContraints(height: tempWaveHeight, view: thirdDayWaveHeightView))
-        tempWeekDayName = json["data"]["weather"][3]["date"].stringValue
-        thirdDayName.text = Date().getDayOfWeek(today: tempWeekDayName)
-        tempWaveDirect = json["data"]["weather"][3]["hourly"][0]["swellDir16Point"].stringValue
-        thirdDayWaveDirect.text = tempWaveDirect
-        tempWaveSpeed = json["data"]["weather"][3]["hourly"][0]["swellPeriod_secs"].stringValue
-        thirdDayWaveSpeed.text = tempWaveSpeed.appending("s")
-        
-        // Icon
-        tempWaveDirectionDegree = json["data"]["weather"][3]["hourly"][0]["swellDir"].doubleValue
-        thirdDayWaveDirectIcon.transform = CGAffineTransform(rotationAngle: CGFloat(tempWaveDirectionDegree * M_PI/180))
-        tempimageIcon = thirdDayWaveDirectIcon.image?.imageWithColor(color: UIColor(red:0.69, green:0.81, blue:0.86, alpha:1.0))
-        thirdDayWaveDirectIcon.image = tempimageIcon
+        thirdDayWaveDirect.text = parseController.getWaveDirectionForDay(day: 3, json: json)
+        thirdDayWaveSpeed.text = parseController.getWaveSpeedForDay(day: 3, json: json).appending("s")
+        NSLayoutConstraint.activate(parseController.getHeightContraints(height: tempWaveHeight, view: thirdDayWaveHeightView))
+        thirdDayWaveDirectIcon = parseController.getWaveDirectionArrowForDay(imageView: thirdDayWaveDirectIcon, day: 3, json: json)
         
         
         // Fourth day wave
-        tempWaveHeight = json["data"]["weather"][4]["hourly"][0]["swellHeight_m"].stringValue
+        fourthDayName.text = parseController.getWeekDay(day: 4, json: json)
+        tempWaveHeight = parseController.getWaveHeightForDay(day: 4, json: json)
         fourthDayWaveHeight.text = tempWaveHeight
-        NSLayoutConstraint.activate(getHeightContraints(height: tempWaveHeight, view: fourthDayWaveHeightView))
-        tempWeekDayName = json["data"]["weather"][4]["date"].stringValue
-        fourthDayName.text = Date().getDayOfWeek(today: tempWeekDayName)
-        tempWaveDirect = json["data"]["weather"][4]["hourly"][0]["swellDir16Point"].stringValue
-        fourthDayWaveDirect.text = tempWaveDirect
-        tempWaveSpeed = json["data"]["weather"][4]["hourly"][0]["swellPeriod_secs"].stringValue
-        fourthDayWaveSpeed.text = tempWaveSpeed.appending("s")
-        
-        // Icon rotation
-        tempWaveDirectionDegree = json["data"]["weather"][4]["hourly"][0]["swellDir"].doubleValue
-        fourthDayWaveDirectIcon.transform = CGAffineTransform(rotationAngle: CGFloat(tempWaveDirectionDegree * M_PI/180))
-        tempimageIcon = fourthDayWaveDirectIcon.image?.imageWithColor(color: UIColor(red:0.69, green:0.81, blue:0.86, alpha:1.0))
-        fourthDayWaveDirectIcon.image = tempimageIcon
+        fourthDayWaveDirect.text = parseController.getWaveDirectionForDay(day: 4, json: json)
+        fourthDayWaveSpeed.text = parseController.getWaveSpeedForDay(day: 4, json: json).appending("s")
+        NSLayoutConstraint.activate(parseController.getHeightContraints(height: tempWaveHeight, view: fourthDayWaveHeightView))
+        fourthDayWaveDirectIcon = parseController.getWaveDirectionArrowForDay(imageView: fourthDayWaveDirectIcon, day: 4, json: json)
     }
     
-    func getHeightContraints(height: String, view: UIView) -> [NSLayoutConstraint] {
-        let heightContraints = NSLayoutConstraint(item: view, attribute:
-            .height, relatedBy: .equal, toItem: nil,
-                     attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1.0,
-                     constant: CGFloat(CellDataHelper.getHeightForWaveView(height: height)))
-        
-        let widthContraints = NSLayoutConstraint(item: view, attribute:
-            .width, relatedBy: .equal, toItem: nil,
-                    attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1.0,
-                    constant: 42)
-        
-        return [heightContraints,widthContraints]
-    }
+
     
     
 }

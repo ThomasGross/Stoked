@@ -22,38 +22,28 @@ class DetailDecriptionCell: UITableViewCell, LocationCellProtocol {
     @IBOutlet weak var wwDiffName: UILabel!
     @IBOutlet weak var wwDiffValue: UILabel!
     
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+    var cellDataHelper = CellDataController()
     
     func populateCell(json: JSON, location: LocationModel) {
         
         descriptionTextView.text = location.locationDescription
         
         if location.isSurfLocation {
-            surfDiffValue.text = CellDataHelper.getDifficultyLevel(level: location.surfDifficulty)
+            surfDiffValue.text = cellDataHelper.getDifficultyLevel(level: location.surfDifficulty)
         } else {
             surfDiffValue.text = "N/A"
             surfDiffValue.textColor = UIColor(red:0.78, green:0.78, blue:0.78, alpha:1.0)
             surfDiffName.textColor = UIColor(red:0.78, green:0.78, blue:0.78, alpha:1.0)
         }
         if location.isSUPLocation {
-            supDiffValue.text = CellDataHelper.getDifficultyLevel(level: location.supDifficulty)
+            supDiffValue.text = cellDataHelper.getDifficultyLevel(level: location.supDifficulty)
         } else {
             supDiffValue.text = "N/A"
             supDiffValue.textColor = UIColor(red:0.78, green:0.78, blue:0.78, alpha:1.0)
             supDiffName.textColor = UIColor(red:0.78, green:0.78, blue:0.78, alpha:1.0)
         }
         if location.isWhiteWaterLocation {
-            wwDiffValue.text = CellDataHelper.getDifficultyLevel(level: location.whiteWaterDifficulty)
+            wwDiffValue.text = cellDataHelper.getDifficultyLevel(level: location.whiteWaterDifficulty)
         } else {
             wwDiffValue.text = "N/A"
             wwDiffValue.textColor = UIColor(red:0.78, green:0.78, blue:0.78, alpha:1.0)

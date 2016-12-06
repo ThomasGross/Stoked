@@ -28,7 +28,5 @@ class JsonWeatherService {
                 print(error)
             }
         }
-        
     }
-    
 }
