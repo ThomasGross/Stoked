@@ -20,7 +20,6 @@ class LocationDetailViewController: UIViewController, UITableViewDelegate, UITab
     
     @IBOutlet weak var backgroundImage: UIImageView!
     
-    
     var json: JSON!
     var location: LocationModel!
     
