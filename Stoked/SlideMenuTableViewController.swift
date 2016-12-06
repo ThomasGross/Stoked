@@ -99,5 +99,20 @@ class SlideMenuTableViewController: UITableViewController {
             
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
+        if segue.identifier == "segueToMapView" {
+      
+            let destinationNavigationController = segue.destination as! UINavigationController
+            let targetController = destinationNavigationController.topViewController
 
+            if let vc = targetController as? MapViewController{
+                vc.relocation = true
+                
+            }
+        }
+    }
+    
+    
 }

@@ -86,6 +86,19 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         locationManager.requestWhenInUseAuthorization()
         
         
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        if relocation == true{
+         
+            
+            locationManager.startUpdatingLocation()
+            
+            
+            
+        }
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
@@ -110,8 +123,10 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         if let userLocation = locations.last{  // optional binding
             
             let region = MKCoordinateRegionMakeWithDistance(userLocation.coordinate,100000,100000)
-            
+        
             self.MapView.setRegion(region, animated: true) //vis området på kortet
+            
+            MapView.showsUserLocation = true
         }
         
         if relocation{
